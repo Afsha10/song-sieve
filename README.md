@@ -10,6 +10,10 @@ However, the individual playlists depend on their personal preferences: some peo
 
 ## User stories:
 
+_As a Spotify user_, I want to get my playlist with the tracks from Spotify into my app using the playlist URL provided by Spotify (i.e. bringing data into the app)
+
+_As a Song Sieve app user_, I want to be able to see the tracks in my playlist displayed in the app (i.e be able to see the playlist name, the artist names, the tracks names,...)
+
 _As someone who has received a playlist_, I want to filter out types of tracks from the playlist so that I can remove tracks that I don't want
 
 _As someone who has received a playlist_, I want to create a new playlist based on the filtered tracks so that I can continue to listen to them in the future
