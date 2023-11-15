@@ -25,17 +25,30 @@ function LoginScreen() {
 
   return (
     <div>
-      <button
-        onClick={() =>
-          redirectToSpotify(
-            localStorage.getItem("codeVerifier"),
-            localStorage.getItem("codeChallenge"),
-            "user-read-private playlist-read-private user-read-email"
-          )
-        }
-      >
-        LoginScreen
-      </button>
+      <div className="card">
+        <div className="card-body">
+          <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            Hello sunshine !! This app will help you to bring a playlist and
+            create your own playlist with the tracks you love. Sign up to save
+            your playlist, then upload your customised playlist to your Spotify
+            account.
+          </p>
+          <div className="text-center">
+            <button
+              className="btn btn-outline-primary"
+              onClick={() =>
+                redirectToSpotify(
+                  localStorage.getItem("codeVerifier"),
+                  localStorage.getItem("codeChallenge"),
+                  "user-read-private playlist-read-private user-read-email"
+                )
+              }
+            >
+              Sign in
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
