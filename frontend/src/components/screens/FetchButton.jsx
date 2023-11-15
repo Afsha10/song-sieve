@@ -1,6 +1,9 @@
 import React from "react";
 
 function FetchButton() {
+  
+  // TODO: This is boiler plate code to demonstrate how to get access token
+  
   function getPlaylistData(playlistId) {
     const apiUrl = "https://api.spotify.com/v1/playlists/" + playlistId;
 
