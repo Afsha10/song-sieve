@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { generateRandomString } from "../../utils/codeChallenge";
-import { sha256 } from "../../utils/codeChallenge";
-import { base64encode } from "../../utils/codeChallenge";
-import { redirectToSpotify } from "../../utils/redirectToSpotify";
+import { generateRandomString } from "../../utils/encodingUtils";
+import { sha256 } from "../../utils/encodingUtils";
+import { base64encode } from "../../utils/encodingUtils";
+import { redirectToSpotify } from "../../utils/spotifyApiUtils";
 // import "dotenv/config";
 
 function LoginScreen() {
