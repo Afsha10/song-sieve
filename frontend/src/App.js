@@ -5,7 +5,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
         <RouterProvider
           router={AppRouter}
           fallbackElement={<p>Loading...</p>}
