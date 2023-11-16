@@ -9,6 +9,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://www.lifeatspotify.com/images/1320x757/Work-from-anywhere-b-2640.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
@@ -16,7 +19,7 @@ code {
     monospace;
 }
 
-.card {
+.homepage {
   width: 40em;
   margin-left: auto;
   margin-right: auto;
