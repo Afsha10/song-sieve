@@ -9,9 +9,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+  }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.homepage {
+  width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
 }
