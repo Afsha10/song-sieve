@@ -5,7 +5,7 @@ import { base64encode } from "../../utils/encodingUtils";
 import { redirectToSpotify } from "../../utils/spotifyApiUtils";
 // import "dotenv/config";
 
-function LoginScreen() {
+function LoginScreen({setChooseHeader}) {
   useEffect(() => {
     async function codeChallengeReturn() {
       const codeVerifier = generateRandomString(64);
@@ -26,13 +26,15 @@ function LoginScreen() {
   return (
     <div>
       <button
-        onClick={() =>
+        onClick={() =>{
           redirectToSpotify(
             localStorage.getItem("codeVerifier"),
             localStorage.getItem("codeChallenge"),
             "user-read-private playlist-read-private user-read-email"
           )
-        }
+          console.log("sign innnnnn")
+          setChooseHeader(true)
+        }}  
       >
         LoginScreen
       </button>
