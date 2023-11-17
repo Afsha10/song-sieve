@@ -10,3 +10,5 @@ INSERT INTO users(user_full_name)
     ('Alexey Orchid'),
    	('Alisha Jasmine'),
    	('Barath Lupine');
+
+    
