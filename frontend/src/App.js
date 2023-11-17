@@ -3,7 +3,7 @@ import AppRouter from "./AppRouter";
 
 function App() {
   return (
-    <div className="App">
+    <div className=" flex flex-col bg-yellow-100 min-h-screen">
       <header className="App-header">
         <RouterProvider
           router={AppRouter}
