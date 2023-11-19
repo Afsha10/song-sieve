@@ -6,11 +6,10 @@ const redirectUri = "http://localhost:3000/app";
 const url = "https://accounts.spotify.com/api/token";
 
 function MainScreen() {
+
+
   const [inputUrl, setInputUrl] = useState(null);
-  const [accessToken, setAccessToken] = useState(null);
-  const [tokenType, setTokenType] = useState(null);
- //const [refreshToken, setRefreshToken] = useState(null);
-const [data,setData] = useState(null)
+ 
   useEffect(() => {
     async function getToken() {
       const urlParams = new URLSearchParams(window.location.search);
@@ -36,74 +35,49 @@ const [data,setData] = useState(null)
       fetch(url, payload)
         .then((response) => response.json())
         .then((data) => {
-          
-          setData(data)
-          // setRefreshToken(data.refresh_token)
+          console.log(data)
+         
            console.log(`access_token: ${data.access_token}`)
            console.log(`token_type: ${data.token_type}`)
            console.log("refreshToken",data.refresh_token)
           if (data.access_token) {
           localStorage.setItem("access_token", data.access_token);
-          setAccessToken(data.access_token);
+          
           }
           if (data.token_type) {
             localStorage.setItem("token_type", data.token_type);
-            setTokenType(data.token_type);
             }
         });
     }
     getToken();
   }, []);
 
-
-// refresh an access token
-const getRefreshToken = async () => {
-  // refresh token that has been previously stored
-  const refreshToken = localStorage.getItem('refresh_token');
-  const url = "https://accounts.spotify.com/api/token";
-
-   const payload = {
-     method: 'POST',
-     headers: {
-       'Content-Type': 'application/x-www-form-urlencoded'
-     },
-     body: new URLSearchParams({
-       grant_type: 'refresh_token',
-       refresh_token: refreshToken,
-       client_id: clientId
-     }),
-   }
-   const body = await fetch(url, payload);
-   const response = await body.json();
-   
-   localStorage.setItem('access_token', response.accessToken);
-   localStorage.setItem('refresh_token', response.refreshToken);
-   console.log('refresh_token', response.refreshToken)
- }
-
-  
-
-
   const handleSubmit = async (e) => {
+    console.log('handle')
     e.preventDefault();
     // extracting playlist_id from url
     const arrayOfString = inputUrl.split('/');
     const playListId = arrayOfString[arrayOfString.length - 1].split("?")[0];
-    console.log("submit button clicked")
-    console.log(tokenType);
-    let tokenType = localStorage.setItem("access_token", data.access_token);
-    let accessToken =  localStorage.setItem("access_token", data.access_token);
-    console.log(accessToken)
+    const myAccessToken = localStorage.getItem('access_token');
+    const myTokenType = localStorage.getItem('token_type');
+
+    console.log({
+      myAccessToken,  
+      myTokenType
+    })
+
     const playListParameters = {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `${tokenType}  ${accessToken}`
+        'Authorization': `${myTokenType}  ${myAccessToken}`
       }
     };
+
     try {
       const response = await fetch(`https://api.spotify.com/v1/playlists/${playListId}`, playListParameters);
       if (!response.ok) {
+        console.log(response)
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
@@ -127,8 +101,6 @@ const getRefreshToken = async () => {
           <button type="submit" onClick={(e) => handleSubmit(e)}>ADD</button>
           </div>
         </form>
-    
-       
       </div>
     </div>
     </>
