@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Header from "../Header";
 
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
 const redirectUri = "http://localhost:3000/app";
@@ -40,7 +41,12 @@ function MainScreen() {
     getToken();
   }, []);
 
-  return <div>MainScreen</div>;
+  return (
+    <div>
+      <Header userName={"shadi"}/>
+      <div>MainScreen</div>;
+    </div>
+  ) 
 }
 
 export default MainScreen;

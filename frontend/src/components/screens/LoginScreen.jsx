@@ -3,9 +3,10 @@ import { generateRandomString } from "../../utils/encodingUtils";
 import { sha256 } from "../../utils/encodingUtils";
 import { base64encode } from "../../utils/encodingUtils";
 import { redirectToSpotify } from "../../utils/spotifyApiUtils";
+import HeaderLogin from "../HeaderLogin";
 // import "dotenv/config";
 
-function LoginScreen({setChooseHeader}) {
+function LoginScreen() {
   useEffect(() => {
     async function codeChallengeReturn() {
       const codeVerifier = generateRandomString(64);
@@ -25,17 +26,15 @@ function LoginScreen({setChooseHeader}) {
 
   return (
     <div>
+      <HeaderLogin/>
       <button
-        onClick={() =>{
+        onClick={() =>
           redirectToSpotify(
             localStorage.getItem("codeVerifier"),
             localStorage.getItem("codeChallenge"),
             "user-read-private playlist-read-private user-read-email"
-          )
-          console.log("sign innnnnn")
-          setChooseHeader(true)
-        }}  
-      >
+          )}  
+        >
         LoginScreen
       </button>
     </div>

@@ -1,4 +1,4 @@
-const HeaderLogin = ({userName}) => {
+const HeaderLogin = () => {
      
     return(
         <div>
@@ -11,7 +11,7 @@ const HeaderLogin = ({userName}) => {
                     <p>Spotifay Playlist Seive</p>
                 </div>
                 <div>
-                    <p>Hi {userName}</p>
+                    <p>Hi</p>
                 </div>
           </div>
              
