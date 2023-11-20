@@ -44,7 +44,7 @@ function MainScreen() {
   return (
     <div>
       <Header userName={"shadi"}/>
-      <div>MainScreen</div>;
+      <div>MainScreen</div>
     </div>
   ) 
 }

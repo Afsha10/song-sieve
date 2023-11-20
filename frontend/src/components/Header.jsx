@@ -20,7 +20,7 @@ const Header = ({userName}) => {
                     <p>Hi {userName}</p>
                 </div>
           </div>
-            {/* {showHomePage && <MainScreen/>}    */}
+           
         </div>
     )
 }
