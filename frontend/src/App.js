@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className=" flex flex-col bg-yellow-100 min-h-screen">
-      <header className="App-header"></header>
+      
       {/* RouterProvider below is the main content */}
       <RouterProvider
         className="grow"
