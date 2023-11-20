@@ -3,8 +3,6 @@ import { generateRandomString } from "../../utils/encodingUtils";
 import { sha256 } from "../../utils/encodingUtils";
 import { base64encode } from "../../utils/encodingUtils";
 import { redirectToSpotify } from "../../utils/spotifyApiUtils";
-import Header from "./Header";
-
 // import "dotenv/config";
 
 function LoginScreen() {
@@ -27,7 +25,6 @@ function LoginScreen() {
 
   return (
     <div>
-      <Header userName={''}/>
       <button
         onClick={() =>
           redirectToSpotify(
