@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 
-// credentials for database
+//credentials for database
 const db = new Pool({
   user: process.env.POSTGRES_USERNAME,
   host: process.env.POSTGRES_HOST,
@@ -22,14 +22,16 @@ const db = new Pool({
   ssl: true,
 });
 
-// Connecting to database
+//Connecting to database
 db.connect(function (err) {
   if (err) throw err;
   console.log("Connected to database !");
 });
 
+
 app.get("/", (req, res) => {
   res.status(200).json("Hello World!");
 });
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

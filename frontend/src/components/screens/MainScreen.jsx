@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
 import Header from "../Header";
+=======
+import{ useEffect } from "react";
+import SharePlaylistInputBox from "../SharePlaylistInputBox";
+>>>>>>> playlist-input
 
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
 const redirectUri = "http://localhost:3000/app";
 const url = "https://accounts.spotify.com/api/token";
 
 function MainScreen() {
+  
   useEffect(() => {
     async function getToken() {
       const urlParams = new URLSearchParams(window.location.search);
@@ -31,13 +37,20 @@ function MainScreen() {
       fetch(url, payload)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data.access_token);
+          console.log(data)
+         
+           console.log(`access_token: ${data.access_token}`)
+           console.log(`token_type: ${data.token_type}`)
+           console.log("refreshToken",data.refresh_token)
           if (data.access_token) {
-            localStorage.setItem("access_token", data.access_token);
+          localStorage.setItem("access_token", data.access_token);
+          
           }
+          if (data.token_type) {
+            localStorage.setItem("token_type", data.token_type);
+            }
         });
     }
-
     getToken();
   }, []);
 
@@ -49,4 +62,9 @@ function MainScreen() {
   ) 
 }
 
+  return(
+    <div>
+      <SharePlaylistInputBox/>
+    </div>
+  )};
 export default MainScreen;
