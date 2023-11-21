@@ -43,7 +43,7 @@ function MainScreen() {
 
   return (
     <div>
-      <Header userName={"shadi"}/>
+      <Header/>
       <div>MainScreen</div>
     </div>
   ) 

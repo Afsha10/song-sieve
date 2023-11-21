@@ -20,7 +20,6 @@ function LoginScreen() {
       localStorage.setItem("codeVerifier", codeVerifier);
       localStorage.setItem("codeChallenge", codeChallenge);
     }
-
     fetchData();
   }, []);
 

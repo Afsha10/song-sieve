@@ -1,6 +1,29 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Header = ({userName}) => {
+    const Header = () => {
+    const [userName, SetUserName] = useState(null)
+
+    //accessing the username after log in
+    useEffect(()=>{
+        const getUsername = async ()=>{
+        const myAccessToken = localStorage.getItem('access_token');
+        const myTokenType = localStorage.getItem('token_type');
+            console.log(myAccessToken)
+            console.log(myTokenType)
+        const response = await fetch('https://api.spotify.com/v1/me',{
+       method: "GET",
+       headers: {
+        Authorization: `${myTokenType}  ${myAccessToken}`
+      }
+    })
+    console.log(response)
+       const data =await response.json()
+       SetUserName(data.display_name)
+        }
+       getUsername()
+    },[])
+   
     return(
         <div>
           <div className="header_container">
@@ -20,7 +43,6 @@ const Header = ({userName}) => {
                     <p>Hi {userName}</p>
                 </div>
           </div>
-           
         </div>
     )
 }
