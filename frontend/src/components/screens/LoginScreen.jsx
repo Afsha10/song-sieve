@@ -3,6 +3,7 @@ import { generateRandomString } from "../../utils/encodingUtils";
 import { sha256 } from "../../utils/encodingUtils";
 import { base64encode } from "../../utils/encodingUtils";
 import { redirectToSpotify } from "../../utils/spotifyApiUtils";
+import HeaderLogin from "../HeaderLogin";
 import bg from "../images/hero.jpg";
 // import "dotenv/config";
 
@@ -20,12 +21,13 @@ function LoginScreen() {
       localStorage.setItem("codeVerifier", codeVerifier);
       localStorage.setItem("codeChallenge", codeChallenge);
     }
-
     fetchData();
   }, []);
 
   return (
+    
     <div className="flex flex-col grow bg-yellow-100 justify-between m-8 text-justify font-sm md:font-semibold md:text-2xl lg:text-3xl text-gray-600">
+       <HeaderLogin/>
       <p className="lg:mx-auto lg:w-3/5 mb-2 lg:mb-5">
         Hello sunshine !! This app will help you to bring a playlist and create
         your own playlist with the tracks you love. Sign up to save your
