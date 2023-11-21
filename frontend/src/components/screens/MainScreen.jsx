@@ -1,14 +1,12 @@
-import React, {useState, useEffect } from "react";
+import{ useEffect } from "react";
+import SharePlaylistInputBox from "../SharePlaylistInputBox";
 
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
 const redirectUri = "http://localhost:3000/app";
 const url = "https://accounts.spotify.com/api/token";
 
 function MainScreen() {
-
-
-  const [inputUrl, setInputUrl] = useState(null);
- 
+  
   useEffect(() => {
     async function getToken() {
       const urlParams = new URLSearchParams(window.location.search);
@@ -50,60 +48,9 @@ function MainScreen() {
     }
     getToken();
   }, []);
-
-  const handleSubmit = async (e) => {
-    console.log('handle')
-    e.preventDefault();
-    // extracting playlist_id from url
-    const arrayOfString = inputUrl.split('/');
-    const playListId = arrayOfString[arrayOfString.length - 1].split("?")[0];
-    const myAccessToken = localStorage.getItem('access_token');
-    const myTokenType = localStorage.getItem('token_type');
-
-    console.log({
-      myAccessToken,  
-      myTokenType
-    })
-
-    const playListParameters = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `${myTokenType}  ${myAccessToken}`
-      }
-    };
-
-    try {
-      const response = await fetch(`https://api.spotify.com/v1/playlists/${playListId}`, playListParameters);
-      if (!response.ok) {
-        console.log(response)
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      console.log(data);
-      
-    } catch (error) {
-      console.error('Error fetching playlist data:', error);
-      // Handle error, e.g., set an error state
-    }
-  };
-
-  return (
-    <>
-    <div className="form-countainer">
-      <div className="UrlInput-countainer">
-        <form>
-          <h1>input your playlist Url</h1>
-          <div className="inputButton-countainer">
-          <input type="text" placeholder="Playlist Url" onChange={(e) => setInputUrl(e.target.value)} />
-          <button type="submit" onClick={(e) => handleSubmit(e)}>ADD</button>
-          </div>
-        </form>
-      </div>
+  return(
+    <div>
+      <SharePlaylistInputBox/>
     </div>
-    </>
-  );
-};
-
-
+  )};
 export default MainScreen;
