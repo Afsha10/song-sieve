@@ -34,7 +34,7 @@ import { Link } from 'react-router-dom'
                 </div>
            
                 <div>
-                    <p>Spotifay Playlist Seive</p>
+                    <p>Spotify Playlist Seive</p>
                 </div>
                 <div>
                     <p>Hi {userName}</p>
