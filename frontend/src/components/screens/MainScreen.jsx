@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import React, { useEffect } from "react";
-import Header from "../Header";
-=======
 import{ useEffect } from "react";
 import SharePlaylistInputBox from "../SharePlaylistInputBox";
->>>>>>> playlist-input
-
+import Header from "../Header";
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
 const redirectUri = "http://localhost:3000/app";
 const url = "https://accounts.spotify.com/api/token";
@@ -54,16 +49,17 @@ function MainScreen() {
     getToken();
   }, []);
 
-  return (
-    <div>
-      <Header/>
-      <div>MainScreen</div>
-    </div>
-  ) 
-}
+//   return (
+//     <div>
+     
+//       <div>MainScreen</div>
+//     </div>
+//   ) 
+// }
 
   return(
     <div>
+       <Header/>
       <SharePlaylistInputBox/>
     </div>
   )};
