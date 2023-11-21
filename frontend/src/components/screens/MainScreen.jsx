@@ -49,13 +49,7 @@ function MainScreen() {
     getToken();
   }, []);
 
-//   return (
-//     <div>
-     
-//       <div>MainScreen</div>
-//     </div>
-//   ) 
-// }
+
 
   return(
     <div>
