@@ -8,13 +8,10 @@ import { Link } from 'react-router-dom'
     useEffect(()=>{
         const getUsername = async ()=>{
         const myAccessToken = localStorage.getItem('access_token');
-        const myTokenType = localStorage.getItem('token_type');
-            console.log(myAccessToken)
-            console.log(myTokenType)
         const response = await fetch('https://api.spotify.com/v1/me',{
        method: "GET",
        headers: {
-        Authorization: `${myTokenType}  ${myAccessToken}`
+        Authorization: `Bearer ${myAccessToken}`
       }
     })
     console.log(response)
