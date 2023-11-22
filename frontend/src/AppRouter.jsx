@@ -3,12 +3,12 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-
 import "./index.css";
 import LoginScreen from "./components/screens/LoginScreen";
 import MainScreen from "./components/screens/MainScreen";
 
-let AppRouter = createBrowserRouter(
+// Configure nested routes with JSX
+const AppRouter = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<LoginScreen />} />
