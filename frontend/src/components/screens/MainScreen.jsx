@@ -1,6 +1,9 @@
 import{ useEffect } from "react";
 import SharePlaylistInputBox from "../SharePlaylistInputBox";
 import Header from "../Header";
+import React, { useEffect } from "react";
+import GenreFilter from "../DynamicGenres";
+
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
 const redirectUri = "http://localhost:3000/app";
 const url = "https://accounts.spotify.com/api/token";
@@ -49,6 +52,13 @@ function MainScreen() {
     getToken();
   }, []);
 
+  return (
+    <div>
+      <h1>MainScreen</h1>
+      <GenreFilter />
+    </div>
+  );
+}
 
 
   return(
