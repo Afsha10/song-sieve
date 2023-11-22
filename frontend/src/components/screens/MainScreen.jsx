@@ -55,9 +55,9 @@ function MainScreen() {
   return (
     <div>
       <h1>MainScreen</h1>
+      <Header />
+      <SharePlaylistInputBox />
       <GenreFilter />
-      <Header/>
-      <SharePlaylistInputBox/>
     </div>
   );
 }
