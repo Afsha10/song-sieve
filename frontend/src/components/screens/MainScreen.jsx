@@ -1,7 +1,7 @@
 import{ useEffect } from "react";
 import SharePlaylistInputBox from "../SharePlaylistInputBox";
 import Header from "../Header";
-import React, { useEffect } from "react";
+
 import GenreFilter from "../DynamicGenres";
 
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
@@ -56,15 +56,12 @@ function MainScreen() {
     <div>
       <h1>MainScreen</h1>
       <GenreFilter />
+      <Header/>
+      <SharePlaylistInputBox/>
     </div>
   );
 }
 
 
-  return(
-    <div>
-       <Header/>
-      <SharePlaylistInputBox/>
-    </div>
-  )};
+  
 export default MainScreen;
