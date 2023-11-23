@@ -1,7 +1,8 @@
 import { useState } from "react";
 const SharePlaylistInputBox = () => {
     const [inputUrl, setInputUrl] = useState(null);
-
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
     const handleSubmit = async (e) => {
         e.preventDefault();
         // extracting playlist_id from url

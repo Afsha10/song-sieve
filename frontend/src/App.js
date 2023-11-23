@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className=" flex flex-col bg-yellow-100 min-h-screen">
+    <div className=" flex flex-col bg-black min-h-screen">
       
       {/* RouterProvider below is the main content */}
       <RouterProvider
@@ -12,7 +12,10 @@ function App() {
         router={AppRouter}
         fallbackElement={<p>Loading...</p>}
       />
-      <Footer />
+      <div className="footer">
+        <Footer/>
+      </div>
+      
     </div>
   );
 }
