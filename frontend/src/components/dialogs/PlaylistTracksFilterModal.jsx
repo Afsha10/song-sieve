@@ -4,7 +4,7 @@ function PlaylistTracksFilterModal({ isOpen, handleModalOpen }) {
 
   return (
     <Dialog
-      className="absolute w-screen h-screen top-0 bg-orange-200"
+      className="absolute w-screen h-screen top-0 bg-black"
       open={isOpen}
       onClose={() => handleModalOpen(false)}
     >
