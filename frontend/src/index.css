@@ -53,8 +53,8 @@ height: 100px;
 margin: 10px 15px;
 }
 .spotifyImg{
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
 }
 
 .homepage {
@@ -66,7 +66,7 @@ margin: 10px 15px;
 .inputButton-countainer{
   display: flex;
   flex-direction: column;
- /* ??????? */
+
 }
 .UrlInput-countainer input{
   height: 30px;
@@ -100,11 +100,7 @@ margin: 10px 15px;
     color: white;
     text-align: left;
   }
-  .spotifyImg{
-    width: 30px;
-    height: 30px;
-   
-  }
+  
 .footer{
   position: relative;
   top: 5px;
@@ -116,7 +112,7 @@ margin: 10px 15px;
 .mainLoginDiv{
   position: relative;
   width: 290px;
-  height: 800px;
+  height: 600px;
 }
 .firstLoginDiv{
   position: absolute;
@@ -129,16 +125,22 @@ margin: 10px 15px;
   width: 100%;
   height: 50%;
   bottom: 0px;
+  margin-bottom: 15px;
+  margin-top: 25px;
 }
-.signinImage{
- width: 100%;
- height: 400px;
-}
+
 .firstLoginDiv button{
   background-color: #24A0ED;
   width: 200px;
   height: 30px;
   color: white;
+  margin: 10px 0px;
+}
+.firstLoginDiv button:hover{
+  background-color: white;
+  width: 200px;
+  height: 40px;
+  color: #24A0ED;
   margin: 10px 0px;
 }
  #textLogin{
@@ -149,4 +151,27 @@ margin: 10px 15px;
   bottom: 20px;
   right: 40px;
   left: 40px;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 600px) {
+  .mainLoginDiv{
+    position: relative;
+    width: 800px;
+    height: 900px;
+  }
+  .divLoginBtn{
+    position:absolute;
+    bottom: 20px;
+    right: 100px;
+    left: 100px;
+  }
+  .firstLoginDiv button{
+    background-color: #24A0ED;
+    width: 400px;
+    height: 40px;
+    color: white;
+    margin: 10px 0px;
+  }
+  
 }
