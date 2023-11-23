@@ -53,7 +53,7 @@ function MainScreen() {
   }, []);
 
   return (
-    <div>
+    <div className=" bg-orange-200 grow">
       <h1>MainScreen</h1>
       <Header />
       <SharePlaylistInputBox />
