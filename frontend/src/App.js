@@ -10,7 +10,6 @@ function App() {
       
       {/* RouterProvider below is the main content */}
       <RouterProvider
-        className="grow"
         router={AppRouter}
         fallbackElement={<p>Loading...</p>}
       />
