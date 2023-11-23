@@ -54,7 +54,7 @@ function LoginScreen() {
                   </div>
             </div>
             <div className="secondLoginDiv" >
-                    <img src="https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/blogs/30322/2009/07/31495-12668.jpg?itok=31b-A7bj"/>
+                    <img src="https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/blogs/30322/2009/07/31495-12668.jpg?itok=31b-A7bj" alt=""/>
             </div>
         
     </div>
