@@ -41,7 +41,10 @@ const SharePlaylistInputBox = () => {
           <h1>input your playlist Url</h1>
           <div className="inputButton-countainer">
           <input type="text" placeholder="Playlist Url" onChange={(e) => setInputUrl(e.target.value)} />
-          <button type="submit" onClick={(e) => handleSubmit(e)}>ADD</button>
+          <button type="submit" onClick={(e) => {
+            handleSubmit(e);
+            window.location.assign("/app/playlist")
+            }}>ADD</button>
           </div>
         </form>
       </div>

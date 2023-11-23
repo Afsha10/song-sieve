@@ -48,7 +48,7 @@ function MainScreen() {
 
   return (
     <div className=" bg-orange-200 grow">
-      <h2>MainScreen</h2>
+      <h1>MainScreen</h1>
       <Header />
       <SharePlaylistInputBox />
       {accessToken && <Playlists />}
