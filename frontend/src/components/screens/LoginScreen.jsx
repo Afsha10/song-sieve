@@ -4,7 +4,7 @@ import { sha256 } from "../../utils/encodingUtils";
 import { base64encode } from "../../utils/encodingUtils";
 import { redirectToSpotify } from "../../utils/spotifyApiUtils";
 import HeaderLogin from "../HeaderLogin";
-import bg from "../images/hero.jpg";
+//import bg from "../images/hero.jpg";
 // import "dotenv/config";
 
 function LoginScreen() {
@@ -25,37 +25,40 @@ function LoginScreen() {
   }, []);
 
   return (
-    
-    <div className="flex flex-col grow bg-yellow-100 justify-between m-8 text-justify font-sm md:font-semibold md:text-2xl lg:text-3xl text-gray-600">
-       <HeaderLogin/>
-      <p className="lg:mx-auto lg:w-3/5 mb-2 lg:mb-5">
-        Hello sunshine !! This app will help you to bring a playlist and create
-        your own playlist with the tracks you love. Sign up to save your
-        playlist, then upload your customised playlist to your Spotify account.
-      </p>
-      <div>
-        <img
-          src={bg}
-          alt="Spotify logo"
-          className="flex items-center h-64 sm:mx-7 sm:h-20 md:mx-auto md:h-full"
-        />
-      </div>
-
-      <div className="flex flex-col md:items-center">
-        <button
-          className=" bg-white text-blue-500 transition-colors duration-200 hover:bg-blue-100 active:bg-yellow-500 font-extrabold py-1 px-5 md:py-3 md:px-20 lg:py-5 lg:px-36 rounded-full mt-3 border-2 lg:border-4 border-blue-500"
-          type="button"
-          onClick={() =>
-            redirectToSpotify(
-              localStorage.getItem("codeVerifier"),
-              localStorage.getItem("codeChallenge"),
-              "user-read-private playlist-read-private user-read-email"
-            )
-          }
-        >
-          Sign in
-        </button>
-      </div>
+    <div>
+      <HeaderLogin/>
+    <div style={{display:"flex",justifyContent:"center"}}>
+      
+    <div className="mainLoginDiv">
+            <div className="firstLoginDiv">
+                 
+                  <p id="textLogin">
+                    Hello sunshine !! This app will help you to bring a playlist and create
+                    your own playlist with the tracks you love. Sign up to save your
+                    playlist, then upload your customised playlist to your Spotify account.
+                  </p>
+                  <div className="divLoginBtn">
+                    <div>
+                        <button
+                          onClick={() =>
+                            redirectToSpotify(
+                              localStorage.getItem("codeVerifier"),
+                              localStorage.getItem("codeChallenge"),
+                              "user-read-private playlist-read-private user-read-email"
+                            )
+                          }
+                        >
+                          Sign in
+                        </button>
+                      </div>
+                  </div>
+            </div>
+            <div className="secondLoginDiv" >
+                    <img src="https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/blogs/30322/2009/07/31495-12668.jpg?itok=31b-A7bj"/>
+            </div>
+        
+    </div>
+    </div> 
     </div>
   );
 }
