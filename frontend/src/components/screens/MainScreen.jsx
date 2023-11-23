@@ -1,14 +1,18 @@
-import{ useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import SharePlaylistInputBox from "../SharePlaylistInputBox";
 import Header from "../Header";
+import Playlists from "../Playlists";
+import GenreFilter from "../DynamicGenres";
+
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
 const redirectUri = "http://localhost:3000/app";
 const url = "https://accounts.spotify.com/api/token";
 
 function MainScreen() {
-  
+  const [accessToken, setAccessToken] = useState(null);
+
   useEffect(() => {
-    async function getToken() {
+    function getToken() {
       const urlParams = new URLSearchParams(window.location.search);
       let code = urlParams.get("code");
       console.log("code", code);
@@ -32,35 +36,25 @@ function MainScreen() {
       fetch(url, payload)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
-         
-           console.log(`access_token: ${data.access_token}`)
-           console.log(`token_type: ${data.token_type}`)
-           console.log("refreshToken",data.refresh_token)
+          console.log(data.access_token);
           if (data.access_token) {
-          localStorage.setItem("access_token", data.access_token);
-          
+            localStorage.setItem("access_token", data.access_token);
+            setAccessToken(data.access_token);
           }
-          if (data.token_type) {
-            localStorage.setItem("token_type", data.token_type);
-            }
         });
     }
     getToken();
   }, []);
 
-//   return (
-//     <div>
-     
-//       <div>MainScreen</div>
-//     </div>
-//   ) 
-// }
-
-  return(
-    <div>
-       <Header/>
-      <SharePlaylistInputBox/>
+  return (
+    <div className=" bg-orange-200 grow">
+      <h2>MainScreen</h2>
+      <Header />
+      <SharePlaylistInputBox />
+      {accessToken && <Playlists />}
+      <GenreFilter />
     </div>
-  )};
+  );
+}
+
 export default MainScreen;
