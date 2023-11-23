@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PlaylistInfo from "./PlaylistInfo"; // Update the path accordingly
+import SharedPlaylistDisplay from "./SharedPlaylistDisplay";
 
 const SharePlaylistInputBox = () => {
   const [inputUrl, setInputUrl] = useState("");
@@ -57,17 +57,19 @@ const SharePlaylistInputBox = () => {
                 placeholder="Playlist URL"
                 onChange={(e) => setInputUrl(e.target.value)}
               />
+              
               <button type="submit" onClick={(e) => handleSubmit(e)}>
                 ADD
               </button>
+             
             </div>
           </form>
         </div>
       </div>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p>{error}</p>}
       {loading && <p>Loading...</p>}
-      <PlaylistInfo playlistData={playlistData} />
+      <SharedPlaylistDisplay playlistData={playlistData} />
     </>
   );
 };
