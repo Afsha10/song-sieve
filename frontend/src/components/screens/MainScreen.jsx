@@ -49,7 +49,9 @@ function MainScreen() {
   return (
     <div className=" bg-orange-200 grow">
       <h1>MainScreen</h1>
-      <Header />
+      <div className="filter">
+        <Header />
+      </div>
       <SharePlaylistInputBox />
       {accessToken && <Playlists />}
       <GenreFilter />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+
 const genresUrl =
   "https://api.spotify.com/v1/recommendations/available-genre-seeds";
 
@@ -35,6 +36,7 @@ function GenreFilter() {
 
   return (
     <div>
+      
       <h2>
         <strong>Filter Your Tracks</strong>
       </h2>
@@ -43,7 +45,7 @@ function GenreFilter() {
       </h4>
 
       <select
-       value={selectedGenre}
+        value={selectedGenre}
         onChange={(e) => setSelectedGenre(e.target.value)}
       >
         <option value="">filter by</option>
