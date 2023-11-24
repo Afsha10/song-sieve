@@ -28,7 +28,7 @@ import { Link } from 'react-router-dom'
                 <div>
                     <Link to='/app'>
                         <img className="spotifyImg"
-                        src="https://toppng.com/uploads/preview/spotify-icon-spotify-logo-black-and-white-11563065230ukmcxtnjge.png"
+                        src="https://i.pinimg.com/736x/17/d2/5d/17d25d4df677597d4ed0db654a4179a6.jpg"
                         alt="Spotify Logo" />  
                     </Link> 
                 </div>
