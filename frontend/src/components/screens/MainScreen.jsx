@@ -4,6 +4,7 @@ import Header from "../Header";
 import Playlists from "../Playlists";
 import GenreFilter from "../DynamicGenres";
 
+
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
 const redirectUri = "http://localhost:3000/app";
 const url = "https://accounts.spotify.com/api/token";
@@ -55,6 +56,7 @@ function MainScreen() {
       <SharePlaylistInputBox />
       {accessToken && <Playlists />}
       <GenreFilter />
+      
     </div>
   );
 }

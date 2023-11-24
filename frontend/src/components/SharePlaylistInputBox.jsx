@@ -57,11 +57,10 @@ const SharePlaylistInputBox = () => {
                 placeholder="Playlist URL"
                 onChange={(e) => setInputUrl(e.target.value)}
               />
-              
+
               <button type="submit" onClick={(e) => handleSubmit(e)}>
                 ADD
               </button>
-             
             </div>
           </form>
         </div>
