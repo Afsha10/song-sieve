@@ -7,7 +7,7 @@ function formatDuration(durationInMilliseconds) {
 }
 
 const SharedPlaylistDisplay = ({ playlistData }) => {
-  if (!playlistData || !playlistData.tracks) {
+  if (!playlistData) {
     return null;
   }
 
@@ -49,7 +49,6 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
                 </span>
               )}
             </p>
-            
           ))}
           <p>
             <strong>length:</strong> {formatDuration(track.track.duration_ms)}

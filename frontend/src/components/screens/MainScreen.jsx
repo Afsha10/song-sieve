@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SharePlaylistInputBox from "../SharePlaylistInputBox";
 import Header from "../Header";
 import Playlists from "../Playlists";
-
+import GenreFilter from "../DynamicGenres";
 
 
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
@@ -55,6 +55,7 @@ function MainScreen() {
       </div>
       <SharePlaylistInputBox />
       {accessToken && <Playlists />}
+      <GenreFilter />
       
     </div>
   );
