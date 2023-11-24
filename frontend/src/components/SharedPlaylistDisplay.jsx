@@ -36,20 +36,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
             <strong>Track Name:</strong>
             {track.track.name}
           </p>
-          {track.track.artists.map((artist, artistIndex) => (
-            <p key={artistIndex}>
-              {artist.genres && Array.isArray(artist.genres) && (
-                <span>
-                  <strong>Genres:</strong> {artist.genres.join(", ")}
-                </span>
-              )}
-              {!artist.genres && (
-                <span>
-                  <strong>Genres:</strong> N/A
-                </span>
-              )}
-            </p>
-          ))}
+
           <p>
             <strong>length:</strong> {formatDuration(track.track.duration_ms)}
           </p>
