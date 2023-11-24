@@ -15,6 +15,10 @@ const AppRouter = createBrowserRouter(
       <Route path="/" element={<LoginScreen />} />
       <Route path="/app" element={<MainScreen />} />
       <Route path="/app/playlist" element={<PlaylistTracksScreen />} />
+      <Route
+        path="/app/playlist/:playlistId"
+        element={<PlaylistTracksScreen />}
+      />
     </>
   )
 );

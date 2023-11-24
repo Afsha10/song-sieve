@@ -7,7 +7,7 @@ function formatDuration(durationInMilliseconds) {
 }
 
 const SharedPlaylistDisplay = ({ playlistData }) => {
-  if (!playlistData) {
+  if (!playlistData || !playlistData.tracks) {
     return null;
   }
 
