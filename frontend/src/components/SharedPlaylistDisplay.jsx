@@ -1,7 +1,7 @@
 import React from "react";
 
 const SharedPlaylistDisplay = ({ playlistData }) => {
-  if (!playlistData) {
+  if (!playlistData || !playlistData.tracks) {
     return null;
   }
 
@@ -38,6 +38,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
               <strong>Artist Name:</strong>
               {artist.name}
             </p>
+            
           ))}
         </div>
       ))}
