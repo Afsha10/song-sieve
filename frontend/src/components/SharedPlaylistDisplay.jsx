@@ -1,5 +1,11 @@
 import React from "react";
 
+function formatDuration(durationInMilliseconds) {
+  const minutes = Math.floor(durationInMilliseconds / 60000);
+  const seconds = ((durationInMilliseconds % 60000) / 1000).toFixed(0);
+  return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+}
+
 const SharedPlaylistDisplay = ({ playlistData }) => {
   if (!playlistData) {
     return null;
@@ -9,10 +15,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
     <div className="playlist-info">
       <div className="playlists">
         <h2>{playlistData.name}</h2>
-        <p>
-          <strong>Description: </strong>
-          {playlistData.description}
-        </p>
+
         <p>Total Tracks: {playlistData.tracks.total}</p>
         <img
           src={
@@ -35,10 +38,28 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
           </p>
           {track.track.artists.map((artist, artistIndex) => (
             <p key={artistIndex}>
-              <strong>Artist Name:</strong>
-              {artist.name}
+              {artist.genres && Array.isArray(artist.genres) && (
+                <span>
+                  <strong>Genres:</strong> {artist.genres.join(", ")}
+                </span>
+              )}
+              {!artist.genres && (
+                <span>
+                  <strong>Genres:</strong> N/A
+                </span>
+              )}
             </p>
           ))}
+          <p>
+            <strong>length:</strong> {formatDuration(track.track.duration_ms)}
+          </p>
+          {track.track.album.images.length > 0 && (
+            <img
+              src={track.track.album.images[0].url}
+              alt={`Album Cover for ${track.track.name}`}
+              style={{ width: "100px", height: "100px" }}
+            />
+          )}
         </div>
       ))}
     </div>
