@@ -40,12 +40,16 @@ function LoginScreen() {
                   <div className="divLoginBtn">
                     <div>
                         <button
-                          onClick={() =>
-                            redirectToSpotify(
-                              localStorage.getItem("codeVerifier"),
-                              localStorage.getItem("codeChallenge"),
-                              "user-read-private playlist-read-private user-read-email"
-                            )
+                          onClick={() => {
+                            // taking the current page URL and adding app route to it
+                              const redirectURI = window.location.href + "app"
+                              redirectToSpotify(
+                                localStorage.getItem("codeVerifier"),
+                                localStorage.getItem("codeChallenge"),
+                                "user-read-private playlist-read-private user-read-email",
+                                redirectURI
+                              )
+                            }
                           }
                         >
                           Sign in
