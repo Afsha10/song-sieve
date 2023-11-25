@@ -39,7 +39,7 @@ function LoginScreen() {
                   </p>
                   <div className="divLoginBtn">
                     <div>
-                        <button
+                        <button id="loginBtn"
                           onClick={() =>
                             redirectToSpotify(
                               localStorage.getItem("codeVerifier"),
