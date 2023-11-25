@@ -27,28 +27,31 @@ const SharePlaylistInputBox = () => {
 
   return (
     <>
-      <div className="form-container">
-        <div className="UrlInput-container">
-          <form>
-            <h1>Input your playlist URL</h1>
-            <div className="inputButton-container">
-              <input
-                type="text"
-                placeholder="Playlist URL"
-                onChange={(e) => setInputUrl(e.target.value)}
-              />
-
-              <button type="submit" onClick={(e) => handleSubmit(e)}>
-                ADD
+      <div className="grid gap-2 text-sm md:text-xl lg:text-3xl">
+        <form className="flex flex-col m-auto md:mx-24 lg:mx-96 mx-">
+          <p className="m-2">Add your Spotify playlist URL</p>
+  
+            <input
+              type="text"
+              placeholder="Playlist URL"
+              className="h-8 w-full rounded bg-gray-200 p-2 pl-4 pr-4 lg:h-12 lg:m-2"
+              onChange={(e) => setInputUrl(e.target.value)}
+            />
+              <button
+                className="relative cursor-default rounded-md bg-blue-800 px-10 py-1 text-center self-center text-white shadow-sm ring-1 ring-inset ring-gray-300 sm:text-sm sm:leading-6 my-3"
+                type="submit"
+                onClick={(e) => handleSubmit(e)}
+              >
+                Import shared playlist
               </button>
-            </div>
-          </form>
-        </div>
+           
+          
+        </form>
+       
       </div>
 
       {error && <p>{error}</p>}
       {loading && <p>Loading...</p>}
-      
     </>
   );
 };

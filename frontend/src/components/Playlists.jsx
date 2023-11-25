@@ -32,10 +32,10 @@ function Playlists() {
 
   return (
     <>
-      <p className="text-2xl md:text-4xl lg:text-4xl mx-1 my-5 md:my-8">
+      <p className="text-2xl md:text-4xl lg:text-4xl mx-1 my-5 md:my-8 md:mx-6">
         Your Spotify Playlists
       </p>
-      <div className="grid grid-cols-2 gap-5 m-2 md:grid-cols-3 lg:grid-cols-5 md:gap-10 text-xl md:text-3xl">
+      <div className="grid grid-cols-2 gap-5 m-2 md:grid-cols-3 lg:grid-cols-5 md:gap-10 text-xl md:text-3xl md:mx-6">
         {playlists !== null &&
           playlists.items.map((playlist, index) => (
             <div key={index}>
