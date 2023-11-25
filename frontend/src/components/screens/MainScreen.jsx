@@ -48,8 +48,7 @@ function MainScreen() {
   }, []);
 
   return (
-    <div className=" bg-orange-200 grow">
-      <h1>MainScreen</h1>
+    <div className=" bg-black text-white">
       <div className="filter">
         <Header />
       </div>
