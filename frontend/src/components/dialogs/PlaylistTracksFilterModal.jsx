@@ -1,6 +1,7 @@
 import { Dialog } from "@headlessui/react";
+import GenreFilter from "../DynamicGenres";
 
-function PlaylistTracksFilterModal({ isOpen, handleModalOpen }) {
+function PlaylistTracksFilterModal({ isOpen, handleModalOpen, playlistData }) {
 
   return (
     <Dialog
@@ -14,6 +15,8 @@ function PlaylistTracksFilterModal({ isOpen, handleModalOpen }) {
           <Dialog.Description className="text-lg">Genre</Dialog.Description>
 
           <p>Filter by genre</p>
+
+          <GenreFilter playlistData={playlistData} />
         </div>
 
         <div className="m-3 text-lg">

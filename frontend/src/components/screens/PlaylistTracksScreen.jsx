@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import GenreFilter from "../DynamicGenres";
 import SharedPlaylistDisplay from "../SharedPlaylistDisplay";
 import Header from "../Header"
 import PlaylistTracksFilterModal from "../dialogs/PlaylistTracksFilterModal";
@@ -57,19 +56,19 @@ useEffect(() => {
     
   return (
     <div className="text-white bg-black grow">
-      <Header/>
-      {/* <h2>PlaylistTracksScreen</h2> */}
+      <Header />
       <button
-        className="ml-3 inline-flex justify-center rounded-md border-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 sm:ml-3 sm:w-auto"
+        className=" ml-60 inline-flex justify-center rounded-md border-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 sm:ml-3 sm:w-auto"
         onClick={() => handleModalOpen(true)}
       >
         Filter by
       </button>
       <PlaylistTracksFilterModal
+        playlistData={playlistData}
         isOpen={isOpen}
         handleModalOpen={handleModalOpen}
       />
-      <GenreFilter playlistData={playlistData} />
+
       <SharedPlaylistDisplay playlistData={playlistData} />
     </div>
   );
