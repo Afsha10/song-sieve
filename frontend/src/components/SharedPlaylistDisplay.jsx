@@ -21,7 +21,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         <p className="text-xl md:text-2xl mx-1 my-2 md:my-2 md:mx-6">
           Total Tracks: {playlistData.tracks.total}
         </p>
-        <div className="h-72 md:w-96 md:h-96">
+        <div className="h-72 md:w-96 md:h-96 m-4">
           <img
             src={
               playlistData.images.length > 0
@@ -37,6 +37,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         <div
           className="grid grid-cols-2 
         mt-8
+        mx-4
         gap-3
         md:grid-cols-3
         lg:grid-cols-5
@@ -57,7 +58,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
               <strong>Track Name: </strong>
               {track.track.name}
             </p>
-            <p>
+            <p className=" text-gray-400">
               <strong>Length:</strong> {formatDuration(track.track.duration_ms)}
             </p>
           </div>
