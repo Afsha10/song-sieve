@@ -68,6 +68,9 @@ margin: 10px 15px;
   flex-direction: column;
 
 }
+#inputText{
+  color: black;
+}
 .UrlInput-countainer input{
   height: 30px;
   margin: 15px 0;
