@@ -19,6 +19,7 @@ function Playlists({playlists}) {
       </p>
       <div className="grid grid-cols-2 gap-5 m-2 md:grid-cols-3 lg:grid-cols-5 md:gap-10 text-xl md:text-3xl md:mx-6">
         {playlists !== null &&
+         playlists.items !== undefined &&
           playlists.items.map((playlist, index) => (
             <div key={index}>
               <div className="2">{modifyImageUrl(playlist)}</div>

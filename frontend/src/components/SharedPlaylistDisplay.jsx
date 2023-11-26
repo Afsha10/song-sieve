@@ -44,7 +44,8 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         text-xl
         md:text-3xl
         md:mx-6"
-        >
+        
+         >
           {track.track.album.images.length > 0 && (
             <img
               src={track.track.album.images[0].url}
