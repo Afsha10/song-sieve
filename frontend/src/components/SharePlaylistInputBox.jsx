@@ -34,7 +34,7 @@ const SharePlaylistInputBox = () => {
           <input
             type="text"
             placeholder="Playlist URL"
-            className="h-8 w-full rounded bg-gray-200 p-2 pl-4 pr-4 lg:h-12 lg:m-2"
+            className="h-8 w-full rounded bg bg-gray-600 p-2 pl-4 pr-4 lg:h-12 lg:m-2"
             onChange={(e) => setInputUrl(e.target.value)}
           />
           <button
