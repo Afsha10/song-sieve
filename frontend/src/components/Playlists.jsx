@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import playlistPlaceholderImage from "./images/music-notes.svg";
+import {useNavigate} from "react-router-dom";
 
 
 function Playlists() {
-
+const navigate = useNavigate();
   const [playlists, setPlaylists] = useState(null);
 
   function modifyImageUrl(playlist) {
