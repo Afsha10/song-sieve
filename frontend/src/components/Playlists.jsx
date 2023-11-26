@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import playlistPlaceholderImage from "./images/music-notes.svg";
 
-function Playlists() {
-  const [playlists, setPlaylists] = useState(null);
+
+function Playlists({playlists}) {
 
   function modifyImageUrl(playlist) {
     if (playlist.images.length <= 0) {
@@ -11,23 +11,7 @@ function Playlists() {
     } else {
       return <img src={playlist.images[0]?.url} alt="" />;
     }
-  }
-
-  useEffect(() => {
-    const payload = {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-      },
-    };
-
-    fetch("https://api.spotify.com/v1/me/playlists", payload)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("data", data);
-        setPlaylists(data);
-      });
-  }, []);
+}
 
   return (
     <>
