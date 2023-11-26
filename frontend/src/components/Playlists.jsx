@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import playlistPlaceholderImage from "./images/music-notes.svg";
- 
+
 function Playlists() {
-  const navigate = useNavigate();
   const [playlists, setPlaylists] = useState(null);
 
   function modifyImageUrl(playlist) {
@@ -13,7 +12,7 @@ function Playlists() {
       return <img src={playlist.images[0]?.url} alt="" />;
     }
   }
- 
+
   useEffect(() => {
     const payload = {
       method: "GET",
@@ -29,7 +28,7 @@ function Playlists() {
         setPlaylists(data);
       });
   }, []);
- navigate("/app");
+
   return (
     <>
       <p className="text-2xl md:text-4xl lg:text-4xl mx-1 my-5 md:my-8 md:mx-6">
