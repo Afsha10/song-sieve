@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SharePlaylistInputBox = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [inputUrl, setInputUrl] = useState("");
   const [playlistData, setPlaylistData] = useState(null);
   const [loading, setLoading] = useState(false);
