@@ -4,10 +4,11 @@ import { sha256 } from "../../utils/encodingUtils";
 import { base64encode } from "../../utils/encodingUtils";
 import { redirectToSpotify } from "../../utils/spotifyApiUtils";
 import HeaderLogin from "../HeaderLogin";
+import { config } from "../../config";
 //import bg from "../images/hero.jpg";
-// import "dotenv/config";
 
 function LoginScreen() {
+  console.log("redirectUri", config.redirectUri);
   useEffect(() => {
     async function codeChallengeReturn() {
       const codeVerifier = generateRandomString(64);
@@ -39,13 +40,16 @@ function LoginScreen() {
             <div className="divLoginBtn">
               <div>
                 <button
-                  onClick={() =>
+                  onClick={() => {
+                    // taking the current page URL and adding app route to it
+                    const redirectUri = window.location.href + "app";
                     redirectToSpotify(
                       localStorage.getItem("codeVerifier"),
                       localStorage.getItem("codeChallenge"),
-                      "user-read-private playlist-read-private user-read-email"
-                    )
-                  }
+                      "user-read-private playlist-read-private user-read-email",
+                      redirectUri
+                    );
+                  }}
                 >
                   Sign in
                 </button>
