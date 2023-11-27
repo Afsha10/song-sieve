@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function formatDuration(durationInMilliseconds) {
   const minutes = Math.floor(durationInMilliseconds / 60000);
@@ -7,15 +7,45 @@ function formatDuration(durationInMilliseconds) {
 }
 
 const SharedPlaylistDisplay = ({ playlistData }) => {
+  const [playTracks, setPlayTracks] = useState(false);
+  const [uri, setUri] = useState("");
+  const [urlTrack, setUrlTrack] = useState()
+
+  useEffect(() => {
+    console.log(uri)
+    window.onSpotifyIframeApiReady = (IFrameAPI) => {
+      const element = document.getElementById('embed-iframe');
+      const options = {
+        uri: uri,
+      };
+      const callback = (EmbedController) => {};
+      IFrameAPI.createController(element, options, callback);
+    };
+
+    // Clean up on component unmount
+    return () => {
+      delete window.onSpotifyIframeApiReady;
+    };
+  }, []);
+
+  const handlePlay = (spotifyUri,spotifyUrl) => {
+    setUri(spotifyUri);
+    setUrlTrack(spotifyUrl)
+    console.log(urlTrack)
+    setPlayTracks(true);
+  };
+
   if (!playlistData || !playlistData.tracks) {
-    return null;
+    return <div>Loading...</div>; // You can replace this with your loading indicator or message
   }
 
   return (
     <div className=" mx-10">
+      <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+
       <div className="playlists">
         <h2 className="text-2xl md:text-4xl mx-1 my-5 md:my-8 md:mx-6">
-          {playlistData.name}
+          {playlistData.name || "Playlist Name Not Available"}
         </h2>
 
         <p className="text-xl md:text-2xl mx-1 my-2 md:my-2 md:mx-6">
@@ -32,9 +62,10 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
           />
         </div>
       </div>
-
+      
       {playlistData.tracks.items.map((track, trackIndex) => (
         <div
+          key={trackIndex}
           className="grid grid-cols-2 
         mt-8
         gap-3
@@ -46,12 +77,27 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         md:mx-6"
         >
           {track.track.album.images.length > 0 && (
+            <>
+          <div style={{display:"flex"}}>
+          
             <img
+              key={trackIndex}
               src={track.track.album.images[0].url}
               alt={`Album Cover for ${track.track.name}`}
-              
+              style={{ cursor: "pointer" }}
+              onClick={() => handlePlay(track.track.uri, track.track.id)}
             />
+            <div className="iframeDiv">
+         {playTracks && (
+            <div id="embed-iframe">
+              <iframe src={`https://open.spotify.com/embed/track/${urlTrack}`} width="280" height="100" ></iframe>
+            </div>
+            )}
+        </div>
+            </div>
+            </>
           )}
+
           <div className="grid grid-rows">
             <p>
               <strong>Track Name: </strong>
@@ -63,6 +109,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
           </div>
         </div>
       ))}
+      
     </div>
   );
 };

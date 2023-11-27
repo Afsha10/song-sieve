@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import SharedPlaylistDisplay from "../SharedPlaylistDisplay";
 import Header from "../Header"
 import PlaylistTracksFilterModal from "../dialogs/PlaylistTracksFilterModal";
+// import Player from "../Player";
+
+
 
 function PlaylistTracksScreen() {
   const [playlistData, setPlaylistData] = useState(null);
@@ -69,7 +72,8 @@ useEffect(() => {
         handleModalOpen={handleModalOpen}
       />
 
-      <SharedPlaylistDisplay playlistData={playlistData} />
+      <SharedPlaylistDisplay playlistData={playlistData}  />
+      {/* <div><Player/></div> */}
     </div>
   );
 }

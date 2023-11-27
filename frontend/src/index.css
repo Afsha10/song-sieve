@@ -159,6 +159,11 @@ margin: 10px 15px;
   display: flex;
   justify-content: center;
 }
+.iframeDiv{
+  position: absolute;
+  right: 50px;
+  left: 50px;
+}
 @media (min-width: 600px) {
   .mainLoginDiv{
     position: relative;
