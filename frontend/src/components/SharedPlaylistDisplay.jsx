@@ -1,16 +1,22 @@
 import React from "react";
 
+
+
 function formatDuration(durationInMilliseconds) {
   const minutes = Math.floor(durationInMilliseconds / 60000);
   const seconds = ((durationInMilliseconds % 60000) / 1000).toFixed(0);
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-const SharedPlaylistDisplay = ({ playlistData }) => {
+const SharedPlaylistDisplay = ({ playlistData,filterExplicit }) => {
   if (!playlistData || !playlistData.tracks) {
     return null;
   }
+  const filteredTracks = filterExplicit
+    ? playlistData.tracks.items.filter((track) => track.track.explicit)
+    : playlistData.tracks.items;
 
+  
   return (
     <div className=" mx-10">
       <div className="playlists">
@@ -33,7 +39,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         </div>
       </div>
 
-      {playlistData.tracks.items.map((track, trackIndex) => (
+      {filteredTracks.map((track, trackIndex) => (
         <div
           className="grid grid-cols-2 
         mt-8
@@ -45,13 +51,11 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         text-xl
         md:text-3xl
         md:mx-6"
-        
-         >
+        >
           {track.track.album.images.length > 0 && (
             <img
               src={track.track.album.images[0].url}
               alt={`Album Cover for ${track.track.name}`}
-              
             />
           )}
           <div className="grid grid-rows">
@@ -65,6 +69,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
           </div>
         </div>
       ))}
+      
     </div>
   );
 };
