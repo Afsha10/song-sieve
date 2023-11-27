@@ -1,18 +1,14 @@
-import {Auth} from "../utils/Auth";
-import {useNavigate} from "react-router-dom";
-import { useEffect } from "react";
+import { Auth } from "../utils/Auth";
+import { useNavigate } from "react-router-dom";
 
-export const CheckAuthentication  = ({children}) => {
-    console.log("hello")
-    const navigate = useNavigate()
-    
-   
+export const CheckAuthentication = ({ children }) => {
+  console.log("hello");
+  const navigate = useNavigate();
 
-useEffect(()  => {
-        if (Auth.isLoggedIn()){
-        return children;
-    }else{
-        console.log("notLoggedIn")
-        navigate("/")
-}}, [])
-}
+  if (!Auth.isLoggedIn()) {
+    console.log("notLoggedIn");
+    navigate("/");
+  }
+
+  return children;
+};
