@@ -37,6 +37,7 @@ const SharedPlaylistDisplay = ({ playlistData,filterExplicit }) => {
             alt=""
           />
         </div>
+        
       </div>
 
       {filteredTracks.map((track, trackIndex) => (

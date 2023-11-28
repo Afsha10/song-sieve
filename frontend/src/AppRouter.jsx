@@ -21,6 +21,7 @@ const AppRouter = createBrowserRouter(
         element={<PlaylistTracksScreen />}
       />
       <Route path="/app/filteredPlaylist" element={<FilteredTracksScreen/>}/>
+      
     </>
   )
 );
