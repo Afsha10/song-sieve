@@ -1,16 +1,22 @@
 import React from "react";
 
+
+
 function formatDuration(durationInMilliseconds) {
   const minutes = Math.floor(durationInMilliseconds / 60000);
   const seconds = ((durationInMilliseconds % 60000) / 1000).toFixed(0);
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-const SharedPlaylistDisplay = ({ playlistData }) => {
+const SharedPlaylistDisplay = ({ playlistData,filterExplicit }) => {
   if (!playlistData || !playlistData.tracks) {
     return null;
   }
+  const filteredTracks = filterExplicit
+    ? playlistData.tracks.items.filter((track) => track.track.explicit)
+    : playlistData.tracks.items;
 
+  
   return (
     <div className=" mx-10">
       <div className="playlists">
@@ -21,7 +27,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         <p className="text-xl md:text-2xl mx-1 my-2 md:my-2 md:mx-6">
           Total Tracks: {playlistData.tracks.total}
         </p>
-        <div className="h-72 md:w-96 md:h-96">
+        <div className="h-72 md:w-96 md:h-96 m-4">
           <img
             src={
               playlistData.images.length > 0
@@ -33,10 +39,11 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         </div>
       </div>
 
-      {playlistData.tracks.items.map((track, trackIndex) => (
+      {filteredTracks.map((track, trackIndex) => (
         <div
           className="grid grid-cols-2 
         mt-8
+        mx-4
         gap-3
         md:grid-cols-3
         lg:grid-cols-5
@@ -49,7 +56,6 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
             <img
               src={track.track.album.images[0].url}
               alt={`Album Cover for ${track.track.name}`}
-              
             />
           )}
           <div className="grid grid-rows">
@@ -57,12 +63,13 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
               <strong>Track Name: </strong>
               {track.track.name}
             </p>
-            <p>
+            <p className=" text-gray-400">
               <strong>Length:</strong> {formatDuration(track.track.duration_ms)}
             </p>
           </div>
         </div>
       ))}
+      
     </div>
   );
 };

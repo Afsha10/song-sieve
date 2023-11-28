@@ -2,16 +2,14 @@ import React, { useState, useEffect } from "react";
 import SharePlaylistInputBox from "../SharePlaylistInputBox";
 import Header from "../Header";
 import Playlists from "../Playlists";
-import { config } from "../../config";
+import { redirectUri } from "../../config";
 
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
-const redirectUri = config.redirectUri;
 
 const url = "https://accounts.spotify.com/api/token";
 
 function MainScreen() {
   const [accessToken, setAccessToken] = useState(null);
-  console.log("redirect Uri", redirectUri);
   const [playlists, setPlaylists] = useState(null);
 
   useEffect(() => {
