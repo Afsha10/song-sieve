@@ -63,6 +63,12 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         </div>
       </div>
       
+      {playTracks && (
+            <div id="embed-iframe">
+              <iframe src={`https://open.spotify.com/embed/track/${urlTrack}`} width="280" height="100" ></iframe>
+            <button style={{position:"relative"}} onClick={()=>setPlayTracks(false)}>cancle</button>
+            </div>
+            )}
       {playlistData.tracks.items.map((track, trackIndex) => (
         <div
           key={trackIndex}
@@ -77,9 +83,9 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         md:mx-6"
         >
           {track.track.album.images.length > 0 && (
+            
             <>
           <div style={{display:"flex"}}>
-          
             <img
               key={trackIndex}
               src={track.track.album.images[0].url}
@@ -87,13 +93,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
               style={{ cursor: "pointer" }}
               onClick={() => handlePlay(track.track.uri, track.track.id)}
             />
-            <div className="iframeDiv">
-         {playTracks && (
-            <div id="embed-iframe">
-              <iframe src={`https://open.spotify.com/embed/track/${urlTrack}`} width="280" height="100" ></iframe>
-            </div>
-            )}
-        </div>
+            
             </div>
             </>
           )}
