@@ -8,7 +8,8 @@ function formatDuration(durationInMilliseconds) {
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-const SharedPlaylistDisplay = ({ playlistData,filterExplicit }) => {
+const SharedPlaylistDisplay = ({ playlistData }) => {
+   
   const [playTracks, setPlayTracks] = useState(false);
   const [uri, setUri] = useState("");
   const [urlTrack, setUrlTrack] = useState()
@@ -40,10 +41,6 @@ const SharedPlaylistDisplay = ({ playlistData,filterExplicit }) => {
   if (!playlistData || !playlistData.tracks) {
     return <div>Loading...</div>; // You can replace this with your loading indicator or message
   }
-  const filteredTracks = filterExplicit
-    ? playlistData.tracks.items.filter((track) => track.track.explicit)
-    : playlistData.tracks.items;
-
   
   return (
     <div className=" mx-10">
@@ -76,7 +73,7 @@ const SharedPlaylistDisplay = ({ playlistData,filterExplicit }) => {
             <button style={{position:"relative"}} onClick={()=>setPlayTracks(false)}>cancle</button>
             </div>
             )}
-      {filteredTracks.map((track, trackIndex) => (
+      {playlistData.tracks.items.map((track, trackIndex) => (
         <div
           key={trackIndex}
           className="grid grid-cols-2 
@@ -92,8 +89,6 @@ const SharedPlaylistDisplay = ({ playlistData,filterExplicit }) => {
         >
           {track.track.album.images.length > 0 && (
             
-            <>
-          <div style={{display:"flex"}}>
             <img
               key={trackIndex}
               src={track.track.album.images[0].url}
@@ -101,9 +96,7 @@ const SharedPlaylistDisplay = ({ playlistData,filterExplicit }) => {
               style={{ cursor: "pointer" }}
               onClick={() => handlePlay(track.track.uri, track.track.id)}
             />
-            
-            </div>
-            </>
+         
           )}
 
           <div className="grid grid-rows">
