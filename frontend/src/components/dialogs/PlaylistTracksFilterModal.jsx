@@ -1,8 +1,8 @@
 import { Dialog } from "@headlessui/react";
 import GenreFilter from "../DynamicGenres";
+import ContentCheckbox from "../ContentCheckBox";
 
 function PlaylistTracksFilterModal({ isOpen, handleModalOpen, playlistData }) {
-
   return (
     <Dialog
       className="absolute w-screen h-screen top-0 bg-black"
@@ -26,9 +26,9 @@ function PlaylistTracksFilterModal({ isOpen, handleModalOpen, playlistData }) {
         </div>
 
         <div className="m-3 text-lg">
-          <Dialog.Description className="text-lg">Content</Dialog.Description>
+          <Dialog.Description className="text-lg">Explicit</Dialog.Description>
 
-          <p>Filter by content</p>
+          <ContentCheckbox />
         </div>
 
         <div className="flex flex-row justify-center m-auto my-4">

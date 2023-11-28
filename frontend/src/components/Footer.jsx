@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div>
+    <div className="footer">
       <footer>
         <p>&copy; 2023 Spotify Playlist Sieve</p>
       </footer>

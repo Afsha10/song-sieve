@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+
+
 function formatDuration(durationInMilliseconds) {
   const minutes = Math.floor(durationInMilliseconds / 60000);
   const seconds = ((durationInMilliseconds % 60000) / 1000).toFixed(0);
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-const SharedPlaylistDisplay = ({ playlistData }) => {
+const SharedPlaylistDisplay = ({ playlistData,filterExplicit }) => {
   const [playTracks, setPlayTracks] = useState(false);
   const [uri, setUri] = useState("");
   const [urlTrack, setUrlTrack] = useState()
@@ -38,7 +40,11 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
   if (!playlistData || !playlistData.tracks) {
     return <div>Loading...</div>; // You can replace this with your loading indicator or message
   }
+  const filteredTracks = filterExplicit
+    ? playlistData.tracks.items.filter((track) => track.track.explicit)
+    : playlistData.tracks.items;
 
+  
   return (
     <div className=" mx-10">
       <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
@@ -51,7 +57,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         <p className="text-xl md:text-2xl mx-1 my-2 md:my-2 md:mx-6">
           Total Tracks: {playlistData.tracks.total}
         </p>
-        <div className="h-72 md:w-96 md:h-96">
+        <div className="h-72 md:w-96 md:h-96 m-4">
           <img
             src={
               playlistData.images.length > 0
@@ -61,6 +67,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
             alt=""
           />
         </div>
+        
       </div>
       
       {playTracks && (
@@ -69,11 +76,12 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
             <button style={{position:"relative"}} onClick={()=>setPlayTracks(false)}>cancle</button>
             </div>
             )}
-      {playlistData.tracks.items.map((track, trackIndex) => (
+      {filteredTracks.map((track, trackIndex) => (
         <div
           key={trackIndex}
           className="grid grid-cols-2 
         mt-8
+        mx-4
         gap-3
         md:grid-cols-3
         lg:grid-cols-5
@@ -103,7 +111,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
               <strong>Track Name: </strong>
               {track.track.name}
             </p>
-            <p>
+            <p className=" text-gray-400">
               <strong>Length:</strong> {formatDuration(track.track.duration_ms)}
             </p>
           </div>

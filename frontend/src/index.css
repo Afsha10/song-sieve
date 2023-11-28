@@ -90,7 +90,10 @@ margin: 10px 15px;
   justify-content: space-between;
   text-align: center;
   height: 30px;
-  margin: 5px 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   }
   .header_container p{
     color: white;
@@ -99,16 +102,29 @@ margin: 10px 15px;
   .firstLoginDiv p{
     color: white;
     text-align: left;
+    
   }
   
-.footer{
-  /* position: relative; */
-  top: 5px;
+/* .footer{
+ position: absolute; 
+ right: 20px;
+ left: 20px;
   bottom: 5px;
   text-align: center;
   padding: 10px;
   color: white;
+ 
+} */
+.footer{
+  position: relative;
+  top: 0px;
+  bottom: 5px;
+  text-align: center;
+  padding: 10px;
+  background-color: black;
+  color: white;
 }
+
 .mainLoginDiv{
   position: relative;
   width: 290px;
@@ -119,6 +135,7 @@ margin: 10px 15px;
   width: 100%;
   height: 50%;
   top: 0px;
+  
 }
 .secondLoginDiv{
   position: absolute;
@@ -147,7 +164,7 @@ margin: 10px 15px;
   margin: 10px 0px;
 }
  #textLogin{
-  margin-top: 90px;
+  margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -197,5 +214,11 @@ margin: 10px 15px;
   .secondLoginDiv img{
     height: 350px;
     width: 100%;
+  }
+  #textLogin{
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: xx-large;
   }
 }

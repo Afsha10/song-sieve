@@ -15,13 +15,12 @@ function PlaylistTracksScreen() {
 useEffect(() => {
     const fetchData = async () => {
       const myAccessToken = localStorage.getItem("access_token");
-      const myTokenType = localStorage.getItem("token_type");
 
       const playListParameters = {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `${myTokenType} ${myAccessToken}`,
+          Authorization: `Bearer ${myAccessToken}`,
         },
       };
 
@@ -61,7 +60,7 @@ useEffect(() => {
     <div className="text-white bg-black grow">
       <Header />
       <button
-        className=" ml-60 inline-flex justify-center rounded-md border-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 sm:ml-3 sm:w-auto"
+        className=" ml-56 mx-4 inline-flex justify-center rounded-md border-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 sm:ml-3 sm:w-auto"
         onClick={() => handleModalOpen(true)}
       >
         Filter by

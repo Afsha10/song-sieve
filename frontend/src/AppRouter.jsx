@@ -7,6 +7,7 @@ import "./index.css";
 import LoginScreen from "./components/screens/LoginScreen";
 import MainScreen from "./components/screens/MainScreen";
 import PlaylistTracksScreen from "./components/screens/PlaylistTracksScreen";
+import FilteredTracksScreen from "./components/screens/FilteredTracksScreen";
 
 // Configure nested routes with JSX
 const AppRouter = createBrowserRouter(
@@ -19,6 +20,8 @@ const AppRouter = createBrowserRouter(
         path="/app/playlist/:playlistId"
         element={<PlaylistTracksScreen />}
       />
+      <Route path="/app/filteredPlaylist" element={<FilteredTracksScreen/>}/>
+      
     </>
   )
 );
