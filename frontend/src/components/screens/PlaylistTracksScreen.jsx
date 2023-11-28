@@ -56,12 +56,15 @@ useEffect(() => {
   return (
     <div className="text-white bg-black grow">
       <Header />
-      <button
-        className=" ml-56 mx-4 inline-flex justify-center rounded-md border-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 sm:ml-3 sm:w-auto"
-        onClick={() => handleModalOpen(true)}
-      >
-        Filter by
-      </button>
+      <div className="flex justify-end mx-8">
+        <button
+          className="m-1 rounded border-8 border-blue-600 px-3 py-2 text-sm md:text-xl font-bold text-white transition-colors duration-300  hover:bg-blue-700 sm:ml-3 sm:w-auto md:p-4 md:mx-8"
+          onClick={() => handleModalOpen(true)}
+        >
+          Filter by
+        </button>
+      </div>
+
       <PlaylistTracksFilterModal
         playlistData={playlistData}
         isOpen={isOpen}

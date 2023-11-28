@@ -99,6 +99,9 @@ margin: 10px 15px;
     color: white;
     margin-top: 3px;
   }
+  .header_username p{
+    color: #55b2eb;
+  }
   .firstLoginDiv p{
     color: white;
     text-align: left;
