@@ -12,16 +12,16 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
   }
 
   return (
-    <div className=" mx-10">
-      <div className="playlists">
-        <h2 className="text-2xl md:text-4xl mx-1 my-5 md:my-8 md:mx-6">
+    <div className="mx-10">
+      <div>
+        <p className="text-2xl text-center md:text-4xl mx-1 my-1 md:my-2">
           {playlistData.name}
-        </h2>
-
-        <p className="text-xl md:text-2xl mx-1 my-2 md:my-2 md:mx-6">
-          Total Tracks: {playlistData.tracks.total}
         </p>
-        <div className="h-72 md:w-96 md:h-96">
+
+        <p className="text-xl text-center md:text-3xl mx-1 my-2 md:my-6 text-gray-400">
+          {playlistData.tracks.total} tracks
+        </p>
+        <div className=" h-72 md:w-96 md:h-96 mx-auto">
           <img
             src={
               playlistData.images.length > 0
@@ -32,36 +32,29 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
           />
         </div>
       </div>
-
-      {playlistData.tracks.items.map((track, trackIndex) => (
-        <div
-          className="grid grid-cols-2 
-        mt-8
-        gap-3
-        md:grid-cols-3
-        lg:grid-cols-5
+      <div className="grid grid-cols-1 gap-10 my-14 md:grid-cols-2 lg:grid-cols-4 md:gap-10 text-xl md:text-3xl md:mx-6">
+        {playlistData.tracks.items.map((track, trackIndex) => (
+          <div
+            className="grid grid-cols-2 
         md:gap-5
         text-xl
-        md:text-3xl
-        md:mx-6"
-        >
-          {track.track.album.images.length > 0 && (
-            <img
-              src={track.track.album.images[0].url}
-              alt={`Album Cover for ${track.track.name}`}
-            />
-          )}
-          <div className="grid grid-rows">
-            <p>
-              <strong>Track Name: </strong>
-              {track.track.name}
-            </p>
-            <p>
-              <strong>Length:</strong> {formatDuration(track.track.duration_ms)}
-            </p>
+        md:text-3xl"
+          >
+            {track.track.album.images.length > 0 && (
+              <img
+                src={track.track.album.images[0].url}
+                alt={`Album Cover for ${track.track.name}`}
+              />
+            )}
+            <div className="flex-col m-2">
+              <p className="font-bold text-blue-400">{track.track.name}</p>
+              <p className=" text-gray-400">
+                {formatDuration(track.track.duration_ms)}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

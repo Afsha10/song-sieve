@@ -35,14 +35,10 @@ import { Link } from 'react-router-dom'
           </div>
 
           <div>
-            <p>
-              Spotify Playlist Sieve
-            </p>
+            <p>Spotify Playlist Sieve</p>
           </div>
-          <div>
-            <p>
-              Hello {userName}
-            </p>
+          <div className="header_username">
+            <p>Hello {userName}!</p>
           </div>
         </div>
       </div>
