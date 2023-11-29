@@ -1,51 +1,47 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-    const Header = () => {
-    const [userName, SetUserName] = useState(null)
+const Header = () => {
+  const [userName, SetUserName] = useState(null);
 
-    //accessing the username after log in
-    useEffect(()=>{
-        const getUsername = async ()=>{
-        const myAccessToken = localStorage.getItem('access_token');
-        const response = await fetch('https://api.spotify.com/v1/me',{
-       method: "GET",
-       headers: {
-        Authorization: `Bearer ${myAccessToken}`
-      }
-    })
-    console.log(response)
-       const data =await response.json()
-       SetUserName(data.display_name)
-        }
-       getUsername()
-    },[])
-   
-    return (
-      <div>
-        <div className="header_container">
-          <div>
-            <Link to="/app">
-              <img
-                className="spotifyImg"
-                src="https://i.pinimg.com/736x/17/d2/5d/17d25d4df677597d4ed0db654a4179a6.jpg"
-                alt="Spotify Logo"
-              />
-            </Link>
-          </div>
+  //accessing the username after log in
+  useEffect(() => {
+    const getUsername = async () => {
+      const myAccessToken = localStorage.getItem("access_token");
+      const response = await fetch("https://api.spotify.com/v1/me", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${myAccessToken}`,
+        },
+      });
+      console.log(response);
+      const data = await response.json();
+      SetUserName(data.display_name);
+    };
+    getUsername();
+  }, []);
 
-          <div>
-            <p>
-              Spotify Playlist Sieve
-            </p>
-          </div>
-          <div>
-            <p>
-              Hello {userName}
-            </p>
-          </div>
+  return (
+    <div>
+      <div className="header_container">
+        <div>
+          <Link to="/app">
+            <img
+              className="spotifyImg"
+              src="https://i.pinimg.com/736x/17/d2/5d/17d25d4df677597d4ed0db654a4179a6.jpg"
+              alt="Spotify Logo"
+            />
+          </Link>
+        </div>
+
+        <div>
+          <p>Spotify Playlist Sieve</p>
+        </div>
+        <div className="header_username">
+          <p>Hello {userName}!</p>
         </div>
       </div>
-    );
-}
-export default Header
+    </div>
+  );
+};
+export default Header;

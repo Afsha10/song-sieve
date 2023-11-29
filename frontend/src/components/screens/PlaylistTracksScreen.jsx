@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SharedPlaylistDisplay from "../SharedPlaylistDisplay";
-import Header from "../Header"
+import Header from "../Header";
 import PlaylistTracksFilterModal from "../dialogs/PlaylistTracksFilterModal";
 
 function PlaylistTracksScreen() {
   const [playlistData, setPlaylistData] = useState(null);
   const { playlistId } = useParams();
 
-
-useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       const myAccessToken = localStorage.getItem("access_token");
 
@@ -41,27 +40,29 @@ useEffect(() => {
 
     fetchData();
   }, [playlistId]); // Re-fetch when playlistId changes
-// function PlaylistTracksScreen() {
+  // function PlaylistTracksScreen() {
   let [isOpen, setIsOpen] = useState(false);
 
-  const handleModalOpen = ((open) => {
+  const handleModalOpen = (open) => {
     if (open) {
-      setIsOpen(true)
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
     }
-    else {
-      setIsOpen(false)
-    }
-  })
-    
+  };
+
   return (
     <div className="text-white bg-black grow">
       <Header />
-      <button
-        className=" ml-56 mx-4 inline-flex justify-center rounded-md border-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 sm:ml-3 sm:w-auto"
-        onClick={() => handleModalOpen(true)}
-      >
-        Filter by
-      </button>
+      <div className="flex mx-8">
+        <button
+          className="m-1 rounded border-2 md:border-4 border-blue-600 px-3 py-2 text-sm md:text-xl font-bold text-white transition-colors duration-300  hover:bg-blue-700 sm:ml-3 sm:w-auto md:p-2 md:mx-4"
+          onClick={() => handleModalOpen(true)}
+        >
+          Filter by
+        </button>
+      </div>
+
       <PlaylistTracksFilterModal
         playlistData={playlistData}
         isOpen={isOpen}
