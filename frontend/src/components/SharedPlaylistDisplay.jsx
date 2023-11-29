@@ -7,15 +7,14 @@ function formatDuration(durationInMilliseconds) {
 }
 
 const SharedPlaylistDisplay = ({ playlistData }) => {
-   
   const [playTracks, setPlayTracks] = useState(false);
   const [uri, setUri] = useState("");
-  const [urlTrack, setUrlTrack] = useState()
+  const [urlTrack, setUrlTrack] = useState();
 
   useEffect(() => {
-    console.log(uri)
+    console.log(uri);
     window.onSpotifyIframeApiReady = (IFrameAPI) => {
-      const element = document.getElementById('embed-iframe');
+      const element = document.getElementById("embed-iframe");
       const options = {
         uri: uri,
       };
@@ -29,17 +28,17 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
     };
   }, [uri]);
 
-  const handlePlay = (spotifyUri,spotifyUrl) => {
+  const handlePlay = (spotifyUri, spotifyUrl) => {
     setUri(spotifyUri);
-    setUrlTrack(spotifyUrl)
-    console.log(urlTrack)
+    setUrlTrack(spotifyUrl);
+    console.log(urlTrack);
     setPlayTracks(true);
   };
 
   if (!playlistData || !playlistData.tracks) {
     return <div>Loading...</div>; // You can replace this with your loading indicator or message
   }
-  
+
   return (
     <div className=" mx-10">
       <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
@@ -111,6 +110,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         ))}
       </div>
     </div>
-  );};
+  );
+};
 
 export default SharedPlaylistDisplay;
