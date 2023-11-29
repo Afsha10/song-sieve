@@ -44,18 +44,14 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
       <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 
       <div className="playlists">
-        <p className="text-2xl md:text-4xl mx-1 my-5 md:my-8 md:mx-6">
+        <p className="text-2xl text-center md:text-4xl mx-1 my-1 md:my-2">
           {playlistData.name || "Playlist Name Not Available"}
-        </p>
-
-        <p className="text-xl md:text-2xl mx-1 my-2 md:my-2 md:mx-6">
-          Total Tracks: {playlistData.tracks.total}
         </p>
 
         <p className="text-xl text-center md:text-3xl mx-1 my-2 md:my-6 text-gray-400">
           {playlistData.tracks.total} tracks
         </p>
-        <div className=" h-72 md:w-96 md:h-96 mx-auto">
+        <div className="w-72 md:w-80 mx-auto">
           <img
             src={
               playlistData.images.length > 0
@@ -91,18 +87,17 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         md:text-3xl"
           >
             {track.track.album.images.length > 0 && (
-              <img
-                key={trackIndex}
-                src={track.track.album.images[0].url}
-                alt={`Album Cover for ${track.track.name}`}
-                style={{ cursor: "pointer" }}
-                onClick={() => handlePlay(track.track.uri, track.track.id)}
-              />
+                <img
+                  key={trackIndex}
+                  src={track.track.album.images[0].url}
+                  alt={`Album Cover for ${track.track.name}`}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => handlePlay(track.track.uri, track.track.id)}
+                />
             )}
-
-            <div className="grid grid-rows">
-              <p className="font-bold text-blue-400">{track.track.name}</p>
-              <p className=" text-gray-400">
+            <div className="ml-6 sm:m-0 flex-rows">
+              <p className=" font-medium text-blue-400">{track.track.name}</p>
+              <p className=" text-gray-400 text-2xl">
                 {formatDuration(track.track.duration_ms)}
               </p>
             </div>
