@@ -26,9 +26,12 @@ function PlaylistTracksFilterModal({ isOpen, handleModalOpen, playlistData }) {
         </div>
 
         <div className="m-3 text-lg">
-          <Dialog.Description className="text-lg">Explicit</Dialog.Description>
+          <Dialog.Description className="text-lg">
+            {" "}
+            Is explicit
+          </Dialog.Description>
 
-          <ContentCheckbox />
+          <ContentCheckbox playlistData={playlistData} />
         </div>
 
         <div className="flex flex-row justify-center m-auto my-4">
