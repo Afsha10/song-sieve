@@ -6,12 +6,12 @@ const ContentCheckbox = ({ playlistData }) => {
   const [noChecked, setNoChecked] = useState(false);
 
   function yesClickHandler() {
-    //console.log(playlistData.tracks.items)
-    //console.log(playlistData.tracks.items[0].track.explicit)
+    console.log(playlistData.tracks.items)
+    console.log(playlistData.tracks.items[0].track.explicit)
     const selectedTracks = playlistData.tracks.items.filter(
       (track) => track.track.explicit === true
     );
-    //console.log(selectedTracks)
+    console.log(selectedTracks)
     setFilteredTracks(selectedTracks);
     setNoChecked(false);
     setYesChecked(true);
