@@ -44,18 +44,14 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
       <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 
       <div className="playlists">
-        <p className="text-2xl md:text-4xl mx-1 my-5 md:my-8 md:mx-6">
+        <p className="text-2xl text-center md:text-4xl mx-1 my-1 md:my-2">
           {playlistData.name || "Playlist Name Not Available"}
-        </p>
-
-        <p className="text-xl md:text-2xl mx-1 my-2 md:my-2 md:mx-6">
-          Total Tracks: {playlistData.tracks.total}
         </p>
 
         <p className="text-xl text-center md:text-3xl mx-1 my-2 md:my-6 text-gray-400">
           {playlistData.tracks.total} tracks
         </p>
-        <div className=" h-72 md:w-96 md:h-96 mx-auto">
+        <div className="w-72 md:w-80 mx-auto">
           <img
             src={
               playlistData.images.length > 0
