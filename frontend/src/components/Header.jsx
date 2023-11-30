@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LogoutButton from "./LogOut";
 
 const Header = () => {
   const [userName, SetUserName] = useState(null);
@@ -39,6 +40,7 @@ const Header = () => {
         </div>
         <div className="header_username">
           <p>Hello {userName}!</p>
+          <LogoutButton />
         </div>
       </div>
     </div>
