@@ -32,10 +32,21 @@ app.get("/", (req, res) => {
   res.status(200).json("Hello World!");
 });
 
+// This endpoint is used to get all the CYF recommended tracks
+
+app.get("/tracks", (req, res) => {
+  db.query(`SELECT * FROM cyf_tracks`)
+    .then((result) => res.json(result.rows))
+    .catch((error) => {
+      console.log(error.message);
+      res.status(500).send("Database Error");
+    });
+});
+
 // This endpoint is used to get all the CYF recommended playlists
 
-app.get("/playlists", (req, res) => {
-  db.query(`SELECT * FROM cyf_playlists`)
+app.get("/playlist", (req, res) => {
+  db.query(`SELECT * FROM cyf_playlist`)
     .then((result) => res.json(result.rows))
     .catch((error) => {
       console.log(error.message);
