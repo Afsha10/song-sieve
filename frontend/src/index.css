@@ -9,50 +9,48 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  }
-
-
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.form-countainer{
+.form-countainer {
   display: flex;
-justify-content: center;
-margin: 50px;
+  justify-content: center;
+  margin: 50px;
 }
-.homePage{
+.homePage {
   height: 500px;
   width: 700px;
   text-align: center;
   border-radius: 12px;
   border: 1.5px solid rgb(161, 158, 158);
-  box-shadow: rgba(0,0,0,0.05) 0 6px 24px 0,rgba(0,0,0,0.08) 0 0 0 1px; 
+  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
 }
 
-.UrlInput-countainer form{
+.UrlInput-countainer form {
   display: flex;
   flex-direction: column;
   height: 350px;
   padding: 20px;
 }
-.UrlInput-countainer input{
+.UrlInput-countainer input {
   margin: 15px 0;
   padding: 12px 16px;
   border-radius: 12px;
   border: 1.5px solid rgb(161, 158, 158);
-  box-shadow: rgba(0,0,0,0.05) 0 6px 24px 0,rgba(0,0,0,0.08) 0 0 0 1px; 
+  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
 }
 
 .header_container {
-display: flex;
-justify-content: space-between;
-text-align: center;
-height: 100px;
-margin: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  height: 100px;
+  margin: 10px 15px;
 }
-.spotifyImg{
+.spotifyImg {
   width: 40px;
   height: 40px;
 }
@@ -63,25 +61,24 @@ margin: 10px 15px;
   margin-right: auto;
   margin-top: 5em;
 }
-.inputButton-countainer{
+.inputButton-countainer {
   display: flex;
   flex-direction: column;
-
 }
-.UrlInput-countainer input{
+.UrlInput-countainer input {
   height: 30px;
   margin: 15px 0;
   padding: 12px 16px;
   border-radius: 30px;
   border: 1.5px solid rgb(161, 158, 158);
-  box-shadow: rgba(0,0,0,0.05) 0 6px 24px 0,rgba(0,0,0,0.08) 0 0 0 1px; 
+  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
 }
-.UrlInput-countainer button{
+.UrlInput-countainer button {
   height: 25px;
   width: 50px;
   border-radius: 30px;
   border: 1.5px solid rgb(161, 158, 158);
-  box-shadow: rgba(0,0,0,0.05) 0 6px 24px 0,rgba(0,0,0,0.08) 0 0 0 1px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
   text-align: center;
   font-weight: bold;
 }
@@ -94,20 +91,19 @@ margin: 10px 15px;
   margin-bottom: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  }
-  .header_container p{
-    color: white;
-    margin-top: 3px;
-  }
-  .header_username p{
-    color: #55b2eb;
-  }
-  .firstLoginDiv p{
-    color: white;
-    text-align: left;
-    
-  }
-  
+}
+.header_container p {
+  color: white;
+  margin-top: 3px;
+}
+.header_username p {
+  color: #55b2eb;
+}
+.firstLoginDiv p {
+  color: white;
+  text-align: left;
+}
+
 /* .footer{
  position: absolute; 
  right: 20px;
@@ -118,7 +114,7 @@ margin: 10px 15px;
   color: white;
  
 } */
-.footer{
+.footer {
   position: relative;
   top: 0px;
   bottom: 5px;
@@ -128,19 +124,18 @@ margin: 10px 15px;
   color: white;
 }
 
-.mainLoginDiv{
+.mainLoginDiv {
   position: relative;
   width: 290px;
   height: 653px;
 }
-.firstLoginDiv{
+.firstLoginDiv {
   position: absolute;
   width: 100%;
   height: 50%;
   top: 0px;
-  
 }
-.secondLoginDiv{
+.secondLoginDiv {
   position: absolute;
   width: 100%;
   height: 50%;
@@ -148,80 +143,97 @@ margin: 10px 15px;
   margin-bottom: 15px;
   margin-top: 25px;
 }
-.secondLoginDiv img{
+.secondLoginDiv img {
   height: 326px;
 }
 
-.firstLoginDiv button{
-  background-color: #24A0ED;
+.firstLoginDiv button {
+  background-color: #24a0ed;
   width: 200px;
   height: 30px;
   color: white;
   margin: 10px 0px;
 }
-.firstLoginDiv button:hover{
+.firstLoginDiv button:hover {
   background-color: white;
   width: 200px;
   height: 40px;
-  color: #24A0ED;
+  color: #24a0ed;
   margin: 10px 0px;
 }
- #textLogin{
+#textLogin {
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
 }
-.divLoginBtn{
-  position:absolute;
+.divLoginBtn {
+  position: absolute;
   bottom: 20px;
   right: 40px;
   left: 40px;
   display: flex;
   justify-content: center;
 }
-#embed-iframe{
+#embed-iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 @media (min-width: 600px) {
-  .mainLoginDiv{
+  .mainLoginDiv {
     position: relative;
     width: 1000px;
     height: 740px;
   }
-  .divLoginBtn{
-    position:absolute;
+  .divLoginBtn {
+    position: absolute;
     bottom: 20px;
     right: 100px;
     left: 100px;
   }
-  .firstLoginDiv button{
-    background-color: #24A0ED;
+  .firstLoginDiv button {
+    background-color: #24a0ed;
     width: 400px;
     height: 40px;
     color: white;
     margin: 30px 0px;
   }
-  
 
-  
-  .firstLoginDiv button:hover{
+  .firstLoginDiv button:hover {
     background-color: white;
     width: 400px;
     height: 40px;
-    color: #24A0ED;
+    color: #24a0ed;
     margin: 30px 0px;
   }
-  .secondLoginDiv img{
+  .secondLoginDiv img {
     height: 350px;
     width: 100%;
   }
-  #textLogin{
+  #textLogin {
     margin-top: 60px;
     margin-left: 10px;
     margin-right: 10px;
     font-size: xx-large;
+  }
+}
+
+.cyf_logo {
+  display: flex;
+  flex-direction: row;
+  width: 12em;
+  height: 2em;
+  font-size: 0.5em;
+  color: black;
+  background-color: red;
+  margin-bottom: 2em;
+  margin-top: 4em;
+}
+@media only screen and (min-width: 992px) {
+  .cyf_logo {
+    font-size: 1.3em;
+    width: 11em;
+    margin-top: 3em;
   }
 }

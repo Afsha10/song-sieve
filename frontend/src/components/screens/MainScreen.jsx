@@ -3,6 +3,7 @@ import SharePlaylistInputBox from "../SharePlaylistInputBox";
 import Header from "../Header";
 import Playlists from "../Playlists";
 import { redirectUri } from "../../config";
+import RecommendationPageLink from "../ReccommendationPageLink";
 
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
 
@@ -64,6 +65,7 @@ function MainScreen() {
     <div className=" bg-black text-white">
       <div className="filter">
         <Header />
+        <RecommendationPageLink />
       </div>
       <SharePlaylistInputBox />
       {playlists && <Playlists playlists={playlists}/>}
