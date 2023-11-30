@@ -28,10 +28,19 @@ db.connect(function (err) {
   console.log("Connected to database !");
 });
 
-
 app.get("/", (req, res) => {
   res.status(200).json("Hello World!");
 });
 
+// This endpoint is used to get all the CYF recommended playlists
+
+app.get("/playlists", (req, res) => {
+  db.query(`SELECT * FROM cyf_playlists`)
+    .then((result) => res.json(result.rows))
+    .catch((error) => {
+      console.log(error.message);
+      res.status(500).send("Database Error");
+    });
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
