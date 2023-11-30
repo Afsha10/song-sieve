@@ -1,6 +1,7 @@
 import { Dialog } from "@headlessui/react";
 import GenreFilter from "../DynamicGenres";
 import ContentCheckbox from "../ContentCheckBox";
+import DurationFilter from "../DurationFilter";
 
 function PlaylistTracksFilterModal({ isOpen, handleModalOpen, playlistData }) {
   return (
@@ -22,7 +23,9 @@ function PlaylistTracksFilterModal({ isOpen, handleModalOpen, playlistData }) {
         <div className="m-3 text-lg">
           <Dialog.Description className="text-lg">Length</Dialog.Description>
 
-          <p>Filter by length</p>
+          <p>Drag to select your length</p>
+
+          <DurationFilter playlistData={playlistData}/>
         </div>
 
         <div className="m-3 text-lg">
