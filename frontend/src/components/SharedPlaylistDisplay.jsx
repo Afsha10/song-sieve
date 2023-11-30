@@ -87,18 +87,17 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         md:text-3xl"
           >
             {track.track.album.images.length > 0 && (
-              <img
-                key={trackIndex}
-                src={track.track.album.images[0].url}
-                alt={`Album Cover for ${track.track.name}`}
-                style={{ cursor: "pointer" }}
-                onClick={() => handlePlay(track.track.uri, track.track.id)}
-              />
+                <img
+                  key={trackIndex}
+                  src={track.track.album.images[0].url}
+                  alt={`Album Cover for ${track.track.name}`}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => handlePlay(track.track.uri, track.track.id)}
+                />
             )}
-
-            <div className="grid grid-rows">
-              <p className="font-bold text-blue-400">{track.track.name}</p>
-              <p className=" text-gray-400">
+            <div className="ml-6 sm:m-0 flex-rows">
+              <p className=" font-medium text-blue-400">{track.track.name}</p>
+              <p className=" text-gray-400 text-2xl">
                 {formatDuration(track.track.duration_ms)}
               </p>
             </div>
