@@ -236,4 +236,16 @@ code {
     width: 11em;
     margin-top: 3em;
   }
+  .header_username {
+    gap: 2em;
+  }
+}
+.log_out {
+  background-color: #24a0ed;
+  width: 1.5em;
+}
+
+.header_username {
+  display: flex;
+  flex-direction: row;
 }
