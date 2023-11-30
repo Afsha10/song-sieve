@@ -57,9 +57,9 @@ function MainScreen() {
     fetch("https://api.spotify.com/v1/me/playlists", payload)
       .then((response) => response.json())
       .then((data) => {
-        setPlaylists(data);
+       setPlaylists(data);
       });
-  }, [accessToken]);
+  }, []);
 
   return (
     <div className=" bg-black text-white">
