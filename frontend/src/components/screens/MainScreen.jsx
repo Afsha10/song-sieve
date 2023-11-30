@@ -59,7 +59,7 @@ function MainScreen() {
       .then((data) => {
        setPlaylists(data);
       });
-  }, []);
+  }, [accessToken]);
 
   return (
     <div className=" bg-black text-white">
