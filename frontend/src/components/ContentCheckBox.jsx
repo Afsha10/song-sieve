@@ -8,13 +8,6 @@ const ContentCheckbox = ({ playlistData }) => {
   const [noChecked, setNoChecked] = useState(false);
     
   console.log(playlistData)
-
-  // const applyButtonHandler = (e) => {
-  //   e.preventDefault();
-  //   console.log(filteredTracks)
-  //   setFilteredTracks(filteredTracks)
-  //   navigate(`/app/Playlists/${filteredTracks}`);
-  // };
   const applyButtonHandler = (e) => {
     e.preventDefault();
     console.log(filteredTracks)
@@ -22,7 +15,6 @@ const ContentCheckbox = ({ playlistData }) => {
     navigate('/app/filteredPlaylist',{state:{filteredTracks}});
   };
   
-
   function yesClickHandler() {
     const selectedTracks = playlistData.filter(
       (track) => track.track.explicit === true
@@ -44,8 +36,6 @@ const ContentCheckbox = ({ playlistData }) => {
     setNoChecked(true);
   }
 
-  
-
   return (
     <div>
       <label>
@@ -66,7 +56,6 @@ const ContentCheckbox = ({ playlistData }) => {
       >Apply to playlist
       </button>
       </div>
-      
     </div>
   );
 };
