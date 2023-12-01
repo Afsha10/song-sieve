@@ -230,10 +230,20 @@ code {
   margin-bottom: 2em;
   margin-top: 4em;
 }
+.cyf_img {
+  width: 13em;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10em;
+}
 @media only screen and (min-width: 992px) {
   .cyf_logo {
     font-size: 1.3em;
     width: 11em;
     margin-top: 3em;
+  }
+  .cyf_img {
+    width: 25em;
+    height: 15em;
   }
 }
