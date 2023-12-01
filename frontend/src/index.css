@@ -236,22 +236,23 @@ code {
   margin-right: auto;
   height: 10em;
 }
- .cyf_list{
+.cyf_list {
   color: white;
- }
-
- li{list-style: none;
-  margin-top: 2em;
-   background-color:aliceblue;
-   color: black;
 }
-.tracks{
+
+li {
+  list-style: none;
+  margin-top: 2em;
+  background-color: aliceblue;
+  color: black;
+}
+.tracks {
   display: grid;
   grid-template-columns: 1fr;
-  gap:1em;
+  gap: 1em;
   margin-left: 1.5em;
   margin-right: 1.5em;
- }
+}
 
 @media only screen and (min-width: 992px) {
   .cyf_logo {
@@ -261,23 +262,23 @@ code {
   }
   .cyf_img {
     width: 25em;
-    height: 15em;
-  .tracks{
-    grid-template-columns: repeat(3,1fr);
-    height: 20em;
-   
-  }
-  .header_username {
-    gap: 2em;
-  }
-}
-.log_out {
-  background-color: #24a0ed;
-  width: 1.5em;
-}
+    height: 15em;}
 
-.header_username {
-  display: flex;
-  flex-direction: row;
-}
+    .tracks {
+      grid-template-columns: repeat(3, 1fr);
+      height: 20em;
+    }
+    .header_username {
+      gap: 2em;
+    }
+  
+  .log_out {
+    background-color: #24a0ed;
+    width: 1.5em;
+  }
+
+  .header_username {
+    display: flex;
+    flex-direction: row;
+  }
 }
