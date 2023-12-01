@@ -7,8 +7,7 @@ const ReccommendationScreen = () => {
     <div>
       <Header />
       <CyfFavPlaylist />
-      <h2 style={{ color: "white" }}>CodeYourFuture Recommendations</h2>
-      
+
       <CyfRecommendation />
     </div>
   );
