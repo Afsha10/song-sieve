@@ -39,9 +39,6 @@ const genresUrl =
 
   const clickHandlerBtn = (e) => {
     e.preventDefault();
-    console.log(selectedGenre)
-    //console.log(playlistData.tracks.items[0].artists[0].genres);
-
     if (playlistData && playlistData.tracks && playlistData.tracks.items) {
       let filtered = playlistData.tracks.items.filter(track => {
         // Check if the track, artists, and genres are defined before accessing them
@@ -86,7 +83,6 @@ const genresUrl =
       >
         Click
       </button>
-      {console.log(filteredTracks)}
       {showFilteredTracks &&
   (filteredTracks.length > 0 ? (
     filteredTracks.tracks.items.map((track, trackIndex) => (

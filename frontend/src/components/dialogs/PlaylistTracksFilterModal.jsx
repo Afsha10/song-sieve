@@ -1,6 +1,5 @@
 import { Dialog } from "@headlessui/react";
 import GenreFilter from "../DynamicGenres";
-import ContentCheckbox from "../ContentCheckBox";
 import DurationFilter from "../DurationFilter";
 
 function PlaylistTracksFilterModal({ isOpen, handleModalOpen, playlistData }) {
@@ -27,28 +26,12 @@ function PlaylistTracksFilterModal({ isOpen, handleModalOpen, playlistData }) {
 
           <DurationFilter playlistData={playlistData}/>
         </div>
-
-        <div className="m-3 text-lg">
-          <Dialog.Description className="text-lg">
-            {" "}
-            Is explicit
-          </Dialog.Description>
-
-          <ContentCheckbox playlistData={playlistData} />
-        </div>
-
         <div className="flex flex-row justify-center m-auto my-4">
           <button
             className="ml-3 inline-flex justify-center rounded-md border-2 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-blue-700 sm:ml-3 sm:w-auto"
             onClick={() => handleModalOpen(false)}
           >
             Clean
-          </button>
-          <button
-            className="ml-3 inline-flex justify-center rounded-md bg-light-blue-700 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-blue-700 sm:ml-3 sm:w-auto"
-            onClick={() => handleModalOpen(false)}
-          >
-            Apply to playlist
           </button>
         </div>
       </Dialog.Panel>

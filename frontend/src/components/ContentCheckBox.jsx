@@ -1,14 +1,30 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ContentCheckbox = ({ playlistData }) => {
+  const navigate = useNavigate();
   const [filteredTracks, setFilteredTracks] = useState([]);
   const [yesChecked, setYesChecked] = useState(false);
   const [noChecked, setNoChecked] = useState(false);
+    
+  console.log(playlistData)
+
+  // const applyButtonHandler = (e) => {
+  //   e.preventDefault();
+  //   console.log(filteredTracks)
+  //   setFilteredTracks(filteredTracks)
+  //   navigate(`/app/Playlists/${filteredTracks}`);
+  // };
+  const applyButtonHandler = (e) => {
+    e.preventDefault();
+    console.log(filteredTracks)
+    setFilteredTracks(filteredTracks)
+    navigate('/app/filteredPlaylist',{state:{filteredTracks}});
+  };
+  
 
   function yesClickHandler() {
-    console.log(playlistData.tracks.items)
-    console.log(playlistData.tracks.items[0].track.explicit)
-    const selectedTracks = playlistData.tracks.items.filter(
+    const selectedTracks = playlistData.filter(
       (track) => track.track.explicit === true
     );
     console.log(selectedTracks)
@@ -16,17 +32,19 @@ const ContentCheckbox = ({ playlistData }) => {
     setNoChecked(false);
     setYesChecked(true);
   }
+  
   function noClickHandler() {
-    console.log(playlistData.tracks.items);
-    console.log(playlistData.tracks.items[0].track.explicit);
-    const selectedTracks = playlistData.tracks.items.filter(
+    const selectedTracks = playlistData.filter(
       (track) => track.track.explicit === false
     );
+  
     console.log(selectedTracks);
     setFilteredTracks(selectedTracks);
     setYesChecked(false);
     setNoChecked(true);
   }
+
+  
 
   return (
     <div>
@@ -42,6 +60,13 @@ const ContentCheckbox = ({ playlistData }) => {
         No
         <input type="checkbox" checked={noChecked} onChange={noClickHandler} />
       </label>
+      <div>
+      <button
+       onClick={(e)=>applyButtonHandler(e)}
+      >Apply to playlist
+      </button>
+      </div>
+      
     </div>
   );
 };
