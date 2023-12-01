@@ -7,7 +7,6 @@ function formatDuration(durationInMilliseconds) {
 }
 
 const SharedPlaylistDisplay = ({ playlistData }) => {
-  const [playTracks, setPlayTracks] = useState(false);
   const [uri, setUri] = useState("");
   const [urlTrack, setUrlTrack] = useState();
 
@@ -32,10 +31,9 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
     setUri(spotifyUri);
     setUrlTrack(spotifyUrl);
     console.log(urlTrack);
-    setPlayTracks(true);
   };
 
-  if (!playlistData || !playlistData.tracks) {
+  if (!playlistData?.tracks) {
     return <div>Loading...</div>; // You can replace this with your loading indicator or message
   }
 
@@ -63,37 +61,22 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-10 my-14 md:grid-cols-2 lg:grid-cols-4 md:gap-10 text-xl md:text-3xl md:mx-6">
-        {playTracks && (
-          <div id="embed-iframe">
-            <iframe
-              src={`https://open.spotify.com/embed/track/${urlTrack}`}
-              width="280"
-              height="100"
-            ></iframe>
-            <button
-              style={{ position: "relative" }}
-              onClick={() => setPlayTracks(false)}
-            >
-              ❌
-            </button>
-          </div>
-        )}
         {playlistData.tracks.items.map((track, trackIndex) => (
           <div
             key={trackIndex}
             className="grid grid-cols-2 
-        md:gap-5
-        text-xl
-        md:text-3xl"
+              md:gap-5
+              text-xl
+              md:text-3xl"
           >
             {track.track.album.images.length > 0 && (
-                <img
-                  key={trackIndex}
-                  src={track.track.album.images[0].url}
-                  alt={`Album Cover for ${track.track.name}`}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => handlePlay(track.track.uri, track.track.id)}
-                />
+              <img
+                key={trackIndex}
+                src={track.track.album.images[0].url}
+                alt={`Album Cover for ${track.track.name}`}
+                style={{ cursor: "pointer" }}
+                onClick={() => handlePlay(track.track.uri, track.track.id)}
+              />
             )}
             <div className="ml-6 sm:m-0 flex-rows">
               <p className=" font-medium text-blue-400">{track.track.name}</p>
@@ -101,6 +84,21 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
                 {formatDuration(track.track.duration_ms)}
               </p>
             </div>
+            {track.track.id === urlTrack && (
+              <div className="absolute z-10 visible p-4 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-100 tooltip dark:bg-gray-300" role="tooltip"id="embed-iframe">
+                <iframe
+                  src={`https://open.spotify.com/embed/track/${urlTrack}`}
+                  width="280"
+                  height="80"
+                  title="music player"
+                ></iframe>
+                <button className="ml-2"
+                  onClick={() => setUrlTrack(null)}
+                >
+                  ❌
+                </button>
+              </div>
+            )}
           </div>
         ))}
       </div>
