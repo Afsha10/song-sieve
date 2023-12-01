@@ -1,10 +1,11 @@
 import Header from "../Header";
+import CyfFavPlaylist from "../CyfFavPlaylist";
 
 const ReccommendationScreen = () => {
   return (
     <div>
       <Header />
-      <h2 style={{ color: "white" }}>Reccomendation page</h2>
+      <CyfFavPlaylist />
     </div>
   );
 };
