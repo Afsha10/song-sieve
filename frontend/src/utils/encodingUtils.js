@@ -6,6 +6,8 @@ export const generateRandomString = (length) => {
   return values.reduce((acc, x) => acc + possible[x % possible.length], "");
 };
 
+// This is a test
+
 export const sha256 = async (plain) => {
   const encoder = new TextEncoder();
   const data = encoder.encode(plain);
