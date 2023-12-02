@@ -68,11 +68,12 @@ function PlaylistTracksScreen() {
 
       <PlaylistTracksFilterModal
         playlistData={playlistData}
+        setPlaylistData={setPlaylistData}
         isOpen={isOpen}
         handleModalOpen={handleModalOpen}
       />
 
-      <SharedPlaylistDisplay playlistData={playlistData}  />
+      <SharedPlaylistDisplay playlistData={playlistData} />
       {/* <div><Player/></div> */}
     </div>
   );
