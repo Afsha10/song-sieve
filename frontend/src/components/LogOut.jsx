@@ -9,11 +9,7 @@ const LogoutButton = () => {
 
   return (
     <button onClick={handleLogout}>
-      <img
-        className="log_out"
-        src="https://uxwing.com/wp-content/themes/uxwing/download/controller-and-music/power-off-icon.svg"
-        alt="logout Logo"
-      />
+        Sign Out
     </button>
   );
 };
