@@ -2,7 +2,7 @@ import Header from "../Header";
 import CyfFavPlaylist from "../CyfFavPlaylist";
 import CyfRecommendation from "../CyfRecommendation";
 
-const ReccommendationScreen = () => {
+const RecommendationScreen = () => {
   return (
     <div>
       <Header />
@@ -13,4 +13,4 @@ const ReccommendationScreen = () => {
   );
 };
 
-export default ReccommendationScreen;
+export default RecommendationScreen;
