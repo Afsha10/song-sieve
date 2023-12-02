@@ -10,7 +10,7 @@ const RecommendationPageLink = () => {
             src="https://avatars.githubusercontent.com/u/22743767?s=280&v=4"
             alt="code your future logo"
           ></img>
-          <p>Reccommendation</p>
+          <p>Recommendation</p>
         </div>
       </Link>
     </div>

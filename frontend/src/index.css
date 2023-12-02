@@ -217,6 +217,29 @@ code {
     margin-right: 10px;
     font-size: xx-large;
   }
+  .cyf_logo {
+    font-size: 1.3em;
+    width: 11em;
+    margin-top: 3em;
+  }
+  .cyf_img {
+    width: 25em;
+    height: 15em;
+  }
+  .header_username {
+    gap: 2em;
+  }
+  .tracks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+    justify-content: space-between;
+
+    margin-left: 4em;
+  }
+  .track_list {
+    border: 1px solid gold;
+  }
 }
 
 .cyf_logo {
@@ -263,6 +286,10 @@ li {
   .cyf_img {
     width: 25em;
     height: 15em;}
+.log_out {
+  background-color: #24a0ed;
+  width: 1.5em;
+}
 
     .tracks {
       grid-template-columns: repeat(3, 1fr);
@@ -280,5 +307,47 @@ li {
   .header_username {
     display: flex;
     flex-direction: row;
+  }
+}
+.tracks {
+  color: #24a0ed;
+}
+.track_list {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  list-style: none;
+  border-bottom: 1px solid gold;
+  border-top: 1px solid gold;
+  width: 280px;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  width: 20em;
+  font-size: 15px;
+}
+.track_info {
+  width: 10em;
+}
+@media only screen and (min-width: 992px) {
+  .cyf_logo {
+    font-size: 1.3em;
+    width: 11em;
+    margin-top: 3em;
+  }
+  .cyf_img {
+    width: 25em;
+    height: 15em;
+  }
+  .header_username {
+    gap: 2em;
+  }
+  .tracks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .track_list {
+    border: 1px solid gold;
   }
 }

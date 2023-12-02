@@ -18,19 +18,33 @@ const CyfRecommendation = () => {
           <strong>Tracks</strong>
         </p>
         <div className="tracks">
-        {recommendationList.map((track) => (
-          <li key={track.id}>
-            <p>
-              <strong>Recommended by :</strong>
-              {track.recommender_name}
-            </p>
-            <p><strong>Track:</strong>{track.track_name}</p>
-            <p>
-              <strong>Artist:</strong>
-              {track.artist_name}
-            </p>
-          </li>
-        ))}
+          {recommendationList.map((track) => (
+            <li  className = "track_list" key={track.id}>
+              <iframe src={track.iframe_url} width="280" height="100"></iframe>
+              <div className="card">
+              <img
+                src={track.image_url}
+                alt={`track Cover`}
+                width="100"
+                height="200"
+              />
+              <div className="track_info">
+              <p>
+                <strong>Recommended by :</strong>
+                {track.recommender_name}
+              </p>
+              <p>
+                <strong>Track:</strong>
+                {track.track_name}/
+              </p>
+              <p>
+                <strong>Artist:</strong>
+                {track.artist_name}
+              </p>
+              </div>
+              </div>
+            </li>
+          ))}
         </div>
       </div>
     );
