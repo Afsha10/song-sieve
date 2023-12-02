@@ -7,6 +7,7 @@ export const Auth={
     },
     isLoggedIn:()=>{
         const token = localStorage.getItem("access_token");
+        console.log("token", token)
         return !!token; //returning boolean
     },
     getToken:()=>{
