@@ -8,7 +8,7 @@ import LoginScreen from "./components/screens/LoginScreen";
 import MainScreen from "./components/screens/MainScreen";
 import PlaylistTracksScreen from "./components/screens/PlaylistTracksScreen";
 import FilteredTracksScreen from "./components/screens/FilteredTracksScreen";
-import RecommendationScreen from "./components/screens/RecommendationScreen";
+import RecommendationScreen from "./components/screens/Recommendation";
 
 // Configure nested routes with JSX
 const AppRouter = createBrowserRouter(
