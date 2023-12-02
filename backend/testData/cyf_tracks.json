@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "recommender_name": "Barath V.",
+    "track_name": "I've been Dazed",
+    "artist_name": "Michael Kiwanuka",
+    "track_id": "7o0Wmu96vJWVW0KqTowxD3",
+    "image_url": "https://i.scdn.co/image/ab67616d0000b27360ada139840fb439d6750f27",
+    "iframe_url": "https://open.spotify.com/embed/track/7o0Wmu96vJWVW0KqTowxD3",
+    "playlist_id": 1
+  },
+  {
+    "id": 2,
+    "recommender_name": "Jan Softa",
+    "track_name": "Still of the Night",
+    "artist_name": "Whitesnakes",
+    "track_id": "2Th42VycrWIKjhjIfur3xO",
+    "image_url": "https://i.scdn.co/image/ab67616d0000b27312312cc77cd4c75b36b5b168",
+    "iframe_url": "https://open.spotify.com/embed/track/2Th42VycrWIKjhjIfur3xO",
+    "playlist_id": 1
+  },
+  {
+    "id": 3,
+    "recommender_name": "Shubee V.",
+    "track_name": "Hedwig's Theme from Harry Potter",
+    "artist_name": "Patrik Pietschmann",
+    "track_id": "3CkhZ0roo6cHLWXar2JGKi",
+    "image_url": "https://i.scdn.co/image/ab67616d0000b273d4f7f86d6e35ab40d186a8c7",
+    "iframe_url": "https://open.spotify.com/embed/track/3CkhZ0roo6cHLWXar2JGKi",
+    "playlist_id": 1
+  },
+  {
+    "id": 4,
+    "recommender_name": "Afsha H.",
+    "track_name": "Petite fleur",
+    "artist_name": "Henri Salvador",
+    "track_id": "3mZV5PnvEJz6vrHkK76Rno",
+    "image_url": "https://i.scdn.co/image/ab67616d0000b273478af8593efb7dbb024ccece",
+    "iframe_url": "https://open.spotify.com/embed/track/3mZV5PnvEJz6vrHkK76Rno",
+    "playlist_id": 1
+  },
+  {
+    "id": 5,
+    "recommender_name": "Jan Softa",
+    "track_name": "The Pretender",
+    "artist_name": "Foo Fighter",
+    "track_id": "7x8dCjCr0x6x2lXKujYD34",
+    "image_url": "https://i.scdn.co/image/ab67616d0000b27383e260c313dc1ff1f17909cf",
+    "iframe_url": "https://open.spotify.com/embed/track/7x8dCjCr0x6x2lXKujYD34",
+    "playlist_id": 1
+  },
+  {
+    "id": 6,
+    "recommender_name": "Malkit Benning",
+    "track_name": "Yeh Dosti Hum Nahin (Happy Version) - From Sholay",
+    "artist_name": "R.D. Burman",
+    "track_id": "1estdIIGiVlI7Z7u2Fi8om",
+    "image_url": "https://i.scdn.co/image/ab67616d0000b273c0d1e2959153980d5a024a7e",
+    "iframe_url": "https://open.spotify.com/embed/track/1estdIIGiVlI7Z7u2Fi8om",
+    "playlist_id": 1
+  },
+  {
+    "id": 7,
+    "recommender_name": "Jan Softa",
+    "track_name": "Californicatoin",
+    "artist_name": "Red Hot Chilli Peppers",
+    "track_id": "48UPSzbZjgc449aqz8bxox",
+    "image_url": "https://i.scdn.co/image/ab67616d0000b27394d08ab63e57b0cae74e8595",
+    "iframe_url": "src=\"https://open.spotify.com/embed/track/48UPSzbZjgc449aqz8bxox",
+    "playlist_id": 1
+  }
+]
