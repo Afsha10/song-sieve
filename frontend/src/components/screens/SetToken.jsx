@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { redirectUri } from "../../config";
+import { decideRedirectUrl } from "../../decideRedirectUrl";
 import { useNavigate } from "react-router-dom";
 
 const clientId = "719d232ba04d433d98b3605bf4b316e1";
@@ -9,7 +9,7 @@ const url = "https://accounts.spotify.com/api/token";
 function SetToken() {
   const [accessToken, setAccessToken] = useState(null);
   const navigate = useNavigate();
-
+const redirectUri = decideRedirectUrl();
   useEffect(() => {
     function getToken() {
       const urlParams = new URLSearchParams(window.location.search);
@@ -41,15 +41,15 @@ function SetToken() {
         });
     }
     getToken();
-  }, []);
+  }, [redirectUri]);
 
-useEffect(() => {
-  if (accessToken) {
-    navigate("/")
-  }
-}, [accessToken])
+  useEffect(() => {
+    if (accessToken) {
+      navigate("/");
+    }
+  }, [accessToken, navigate]);
 
-  return null
+  return null;
 }
 
 export default SetToken;

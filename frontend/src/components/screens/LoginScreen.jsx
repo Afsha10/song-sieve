@@ -4,11 +4,10 @@ import { sha256 } from "../../utils/encodingUtils";
 import { base64encode } from "../../utils/encodingUtils";
 import { redirectToSpotify } from "../../utils/spotifyApiUtils";
 import HeaderLogin from "../HeaderLogin";
-import { redirectUri } from "../../config";
+
 //import bg from "../images/hero.jpg";
 
 function LoginScreen() {
-  console.log("redirectUri", redirectUri);
   useEffect(() => {
     async function codeChallengeReturn() {
       const codeVerifier = generateRandomString(64);
