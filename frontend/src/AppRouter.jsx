@@ -20,7 +20,11 @@ const AppRouter = createBrowserRouter(
       <Route path="/app/playlist" element={<PlaylistTracksScreen />} />
       <Route
         path="/app/playlist/:playlistId"
-        element={<PlaylistTracksScreen />}
+        element={
+          <CheckAuthentication>
+            <PlaylistTracksScreen />
+          </CheckAuthentication>
+        }
       />
       <Route
         path="/app/playlist"
@@ -38,7 +42,14 @@ const AppRouter = createBrowserRouter(
           </CheckAuthentication>
         }
       />
-      <Route path="/app/recommendation" element={<CheckAuthentication><RecommendationScreen /></CheckAuthentication>} />
+      <Route
+        path="/app/recommendation"
+        element={
+          <CheckAuthentication>
+            <RecommendationScreen />
+          </CheckAuthentication>
+        }
+      />
     </>
   )
 );
