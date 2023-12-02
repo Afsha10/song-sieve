@@ -1,8 +1,9 @@
-import { redirectUri } from "../config";
+import { decideRedirectUrl } from "../decideRedirectUrl";
 
 export function redirectToSpotify(codeVerifier, codeChallenge, scope) {
   const clientId = "719d232ba04d433d98b3605bf4b316e1";
   const authUrl = new URL("https://accounts.spotify.com/authorize");
+  const redirectUri = decideRedirectUrl();
 
   window.localStorage.setItem("code_verifier", codeVerifier);
 
