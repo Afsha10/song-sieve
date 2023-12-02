@@ -4,7 +4,7 @@ const LogoutButton = () => {
   const handleLogout = () => {
     localStorage.removeItem("access_token");
 
-    window.location.href = "/";
+    window.location.href = "/login";
   };
 
   return (
