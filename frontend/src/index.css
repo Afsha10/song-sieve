@@ -226,6 +226,10 @@ code {
     width: 25em;
     height: 15em;
   }
+  .cyfImg{
+    padding-right: 6px;
+    width: 60px;
+  }
   .header_username {
     gap: 2em;
   }
@@ -248,10 +252,12 @@ code {
   width: 12em;
   height: 2em;
   font-size: 0.5em;
-  color: black;
-  background-color: red;
+  color: white;
+  background-color: rgb(184, 45, 45);
   margin-bottom: 2em;
   margin-top: 4em;
+  margin-left: 1em;
+  border-radius: 2px;
 }
 .cyf_img {
   width: 13em;
