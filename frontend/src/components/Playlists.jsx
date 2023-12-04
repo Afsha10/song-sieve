@@ -6,9 +6,9 @@ function Playlists({playlists}) {
 
   function modifyImageUrl(playlist) {
     if (playlist.images.length <= 0) {
-      return <img src={playlistPlaceholderImage} alt="" />;
+      return <img src={playlistPlaceholderImage} alt="" style={{ borderRadius: '5px' }}/>;
     } else {
-      return <img src={playlist.images[0]?.url} alt="" />;
+      return <img src={playlist.images[0]?.url} alt="" style={{ borderRadius: '5px' }}/>;
     }
 }
 
@@ -21,11 +21,11 @@ function Playlists({playlists}) {
         {playlists !== null &&
           playlists.items !== undefined &&
           playlists.items.map((playlist, index) => (
-            <div key={index}>
+            <div key={index} className="playlistDivInMainScreen">
               <Link to={`/app/playlist/${playlist.id}`}>
                 <div>{modifyImageUrl(playlist)}</div>
-                <p>{playlist.name}</p>
-                <p className="text-gray-400">{playlist.tracks.total} tracks</p>
+                <p style={{fontSize:"large", color:"rgb(255,255,255)"}}>{playlist.name}</p>
+                <p style={{fontSize:"large", color:"rgb(255,255, 255)"}}>{playlist.tracks.total} tracks</p>
               </Link>
             </div>
           ))}
