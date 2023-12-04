@@ -26,6 +26,7 @@ const CyfRecommendation = () => {
         <p className="text-center text-blue-600">
           Loading Tracks...
           <img
+            className="loading_img"
             src="https://cdn-icons-png.flaticon.com/128/1477/1477009.png"
             alt="loading img"
           ></img>

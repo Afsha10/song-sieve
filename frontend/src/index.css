@@ -237,7 +237,7 @@ code {
     width: 25em;
     height: 15em;
   }
-  .cyfImg{
+  .cyfImg {
     padding-right: 6px;
     width: 60px;
   }
@@ -305,6 +305,12 @@ code {
 }
 .track_info {
   width: 10em;
+}
+.loading_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
 }
 @media only screen and (min-width: 992px) {
   .cyf_logo {
