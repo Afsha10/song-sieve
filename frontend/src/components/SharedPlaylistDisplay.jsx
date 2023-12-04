@@ -47,7 +47,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         </p>
 
         <p className="text-xl text-center md:text-3xl mx-1 my-2 md:my-6 text-gray-400">
-          {playlistData.tracks.total} tracks
+          {playlistData.tracks.items.length} tracks
         </p>
         <div className="w-72 md:w-80 mx-auto">
           <img
