@@ -1,16 +1,15 @@
 import { Dialog } from "@headlessui/react";
 import GenreFilter from "../DynamicGenres";
-import ContentCheckbox from "../ContentCheckBox";
-import DurationFilter from "../DurationFilter";
 import { useState } from "react";
 
 function PlaylistTracksFilterModal({
   isOpen,
   handleModalOpen,
   playlistData,
-  setPlaylistData,
+  setFilteredPlaylistData,
 }) {
   const [range, setRange] = useState(20);
+
   return (
     <Dialog
       className="absolute w-screen h-screen top-0 bg-black"
@@ -32,9 +31,12 @@ function PlaylistTracksFilterModal({
 
             // playlistData.tracks.items[0].track.explicit;
             const filteredItems = playlistData.tracks.items.filter((item) => {
-              return item.track.explicit === isExplicit && item.track.duration_ms <= duration * 60000;
-            })
-            setPlaylistData({
+              return (
+                item.track.explicit === isExplicit &&
+                item.track.duration_ms <= duration * 60000
+              );
+            });
+            setFilteredPlaylistData({
               ...playlistData,
               tracks: { ...playlistData.tracks, items: filteredItems },
             });
