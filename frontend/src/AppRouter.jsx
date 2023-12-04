@@ -9,8 +9,8 @@ import MainScreen from "./components/screens/MainScreen";
 import PlaylistTracksScreen from "./components/screens/PlaylistTracksScreen";
 import FilteredTracksScreen from "./components/screens/FilteredTracksScreen";
 import RecommendationScreen from "./components/screens/Recommendation";
-import {CheckAuthentication} from "./components/CheckAuthenication"
-import {CheckIfLoggedIn} from "./components/CheckIfLoggedIn";
+import { CheckAuthentication } from "./components/CheckAuthenication";
+import { CheckIfLoggedIn } from "./components/CheckIfLoggedIn";
 import SetToken from "./components/screens/SetToken";
 
 // Configure nested routes with JSX
@@ -33,12 +33,7 @@ const AppRouter = createBrowserRouter(
           </CheckAuthentication>
         }
       />
-      <Route
-        path="/app"
-        element={
-        <SetToken />
-        }
-      />
+      <Route path="/app" element={<SetToken />} />
       <Route
         path="/app/playlist"
         element={
