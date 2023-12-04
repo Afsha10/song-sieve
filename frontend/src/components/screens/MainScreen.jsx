@@ -9,6 +9,7 @@ import { Auth } from "../../utils/Auth";
 function MainScreen() {
   const [playlists, setPlaylists] = useState(null);
   const token = Auth.getToken()
+  
   useEffect(() => {
     const payload = {
       method: "GET",
