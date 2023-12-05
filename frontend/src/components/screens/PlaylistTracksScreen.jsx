@@ -3,13 +3,12 @@ import { useParams } from "react-router-dom";
 import SharedPlaylistDisplay from "../SharedPlaylistDisplay";
 import Header from "../Header";
 import PlaylistTracksFilterModal from "../dialogs/PlaylistTracksFilterModal";
-// import Player from "../Player";
-
-
 
 function PlaylistTracksScreen() {
   const [playlistData, setPlaylistData] = useState(null);
   const { playlistId } = useParams();
+  const [filteredPlaylistData, setFilteredPlaylistData] = useState(null); 
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,13 +66,14 @@ function PlaylistTracksScreen() {
       </div>
 
       <PlaylistTracksFilterModal
+        setFilteredPlaylistData={setFilteredPlaylistData}
         playlistData={playlistData}
         setPlaylistData={setPlaylistData}
         isOpen={isOpen}
         handleModalOpen={handleModalOpen}
       />
 
-      <SharedPlaylistDisplay playlistData={playlistData} />
+      <SharedPlaylistDisplay playlistData={filteredPlaylistData?filteredPlaylistData:playlistData} />
       {/* <div><Player/></div> */}
     </div>
   );

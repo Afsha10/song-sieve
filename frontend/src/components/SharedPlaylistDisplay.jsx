@@ -47,7 +47,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         </p>
 
         <p className="text-xl text-center md:text-3xl mx-1 my-2 md:my-6 text-gray-400">
-          {playlistData.tracks.total} tracks
+          {playlistData.tracks.items.length} tracks
         </p>
         <div className="w-72 md:w-80 mx-auto">
           <img
@@ -64,6 +64,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         {playlistData.tracks.items.map((track, trackIndex) => (
           <div
             key={trackIndex}
+            id="tracksDivInFilterTrackScreen"
             className="grid grid-cols-2 
               md:gap-5
               text-xl
@@ -74,13 +75,13 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
                 key={trackIndex}
                 src={track.track.album.images[0].url}
                 alt={`Album Cover for ${track.track.name}`}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer",borderRadius:"5px",marginLeft:"2px",marginTop:"2px" }}
                 onClick={() => handlePlay(track.track.uri, track.track.id)}
               />
             )}
             <div className="ml-6 sm:m-0 flex-rows">
-              <p className=" font-medium text-blue-400">{track.track.name}</p>
-              <p className=" text-gray-400 text-2xl">
+              <p style={{fontSize:"large",color:"rgb(31, 81, 255, 0.7)"}}>{track.track.name}</p>
+              <p className=" text-gray-400 text-xl">
                 {formatDuration(track.track.duration_ms)}
               </p>
             </div>

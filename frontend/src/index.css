@@ -115,6 +115,16 @@ code {
   box-shadow: 0 8px 16px rgb(31, 81, 255, 0.7);
 }
 
+#tracksDivInFilterTrackScreen{
+  border: 0px solid rgba(255, 255, 255);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.7);
+}
+#tracksDivInFilterTrackScreen:hover{
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgb(31, 81, 255, 0.7);
+}
  
 .footer {
   position: relative;
