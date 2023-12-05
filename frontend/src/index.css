@@ -312,6 +312,7 @@ code {
   margin-right: auto;
   width: 8em;
 }
+
 @media only screen and (min-width: 992px) {
   .cyf_logo {
     font-size: 1.3em;
