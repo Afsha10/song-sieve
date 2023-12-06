@@ -11,7 +11,6 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
   const [urlTrack, setUrlTrack] = useState();
 
   useEffect(() => {
-    console.log(uri);
     window.onSpotifyIframeApiReady = (IFrameAPI) => {
       const element = document.getElementById("embed-iframe");
       const options = {
@@ -30,7 +29,6 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
   const handlePlay = (spotifyUri, spotifyUrl) => {
     setUri(spotifyUri);
     setUrlTrack(spotifyUrl);
-    console.log(urlTrack);
   };
 
   if (!playlistData?.tracks) {

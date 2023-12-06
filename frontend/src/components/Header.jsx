@@ -15,7 +15,6 @@ const Header = () => {
           Authorization: `Bearer ${myAccessToken}`,
         },
       });
-      console.log(response);
       const data = await response.json();
       SetUserName(data.display_name);
     };
