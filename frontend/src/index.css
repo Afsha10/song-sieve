@@ -261,6 +261,23 @@ code {
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
     width: 100px;
   }
+  .sign_out {
+    width: 60px;
+    height: 20px;
+    border-radius: 20%;
+    background-color: rgb(88, 6, 88);
+    color: #fff;
+    border: 1px solid white;
+    cursor: pointer;
+    font-size: 10px;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 7px;
+  }
+  
+  .sign_out:hover {
+    transform: scale(1.1);
+    color: #24a0ed;
+  }
 }
 
 .cyf_logo {
@@ -322,12 +339,9 @@ code {
   margin-top: 20em;
 }
 .sign_out {
-  width: 60px;
+  width: 50px;
   height: 20px;
-  border-radius: 20%;
-  background-color: rgb(88, 6, 88);
   color: #fff;
-  border: 1px solid white;
   cursor: pointer;
   font-size: 10px;
   transition: transform 0.3s ease-in-out;
@@ -335,7 +349,7 @@ code {
 }
 
 .sign_out:hover {
-  transform: scale(1.1);
+  transform: scale(1);
   color: #24a0ed;
 }
 .logoutBtnDiv{
@@ -365,5 +379,19 @@ code {
   }
   .track_list {
     border: 1px solid gold;
+  }
+  .sign_out {
+    width: 60px;
+    height: 25px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 10px;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 7px;
+  }
+  
+  .sign_out:hover {
+    transform: scale(1.1);
+    color: #24a0ed;
   }
 }
