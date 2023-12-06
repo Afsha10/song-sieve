@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { motion } from "framer-motion";
 function formatDuration(durationInMilliseconds) {
   const minutes = Math.floor(durationInMilliseconds / 60000);
   const seconds = ((durationInMilliseconds % 60000) / 1000).toFixed(0);
@@ -49,6 +49,7 @@ const SharedPlaylistDisplay = ({ playlistData }) => {
         </p>
         <div className="w-72 md:w-80 mx-auto">
           <img
+
             src={
               playlistData.images.length > 0
                 ? playlistData.images[0].url
