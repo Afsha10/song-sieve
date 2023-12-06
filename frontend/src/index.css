@@ -255,6 +255,11 @@ code {
 
   .track_list {
     border: 1px solid gold;
+    border: 0px solid rgba(255, 255, 255);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
+    width: 100px;
   }
 }
 
@@ -277,10 +282,6 @@ code {
   margin-right: auto;
   height: 10em;
 }
-.log_out {
-  background-color: #24a0ed;
-  width: 1.5em;
-}
 
 .header_username {
   display: flex;
@@ -288,9 +289,10 @@ code {
 }
 .tracks {
   color: #24a0ed;
-  width: 280px;
+  width: 270px;
   margin-left: auto;
   margin-right: auto;
+  
 }
 .track_list {
   margin-top: 2em;
@@ -299,8 +301,8 @@ code {
   border-bottom: 1px solid gold;
   border-top: 1px solid gold;
   border-radius: 0.7em;
-
   width: 280px;
+  
 }
 .card {
   display: flex;
@@ -317,6 +319,10 @@ code {
   margin-left: auto;
   margin-right: auto;
   width: 4em;
+}
+.track_list:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgb(31, 81, 255, 0.7);
 }
 
 @media only screen and (min-width: 992px) {
@@ -335,7 +341,7 @@ code {
   .tracks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
+    gap: 3em;
     width: 180px;
     margin-left: 16em;
   }
