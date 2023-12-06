@@ -319,10 +319,24 @@ code {
   margin-left: auto;
   margin-right: auto;
   width: 4em;
+  margin-top: 20em;
 }
-.track_list:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgb(31, 81, 255, 0.7);
+.sign_out {
+  width: 60px;
+  height: 20px;
+  border-radius: 20%;
+  background-color: rgb(88, 6, 88);
+  color: #fff;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 10px;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 7px;
+}
+
+.sign_out:hover {
+  transform: scale(1.1);
+  color: #24a0ed;
 }
 
 @media only screen and (min-width: 992px) {
