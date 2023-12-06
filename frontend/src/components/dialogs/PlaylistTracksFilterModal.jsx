@@ -1,5 +1,4 @@
 import { Dialog } from "@headlessui/react";
-import GenreFilter from "../DynamicGenres";
 import { useState } from "react";
 
 function PlaylistTracksFilterModal({
@@ -24,9 +23,6 @@ function PlaylistTracksFilterModal({
           onSubmit={(e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
-            console.log("form data get", formData.get("isExplicit"));
-            console.log("duration", formData.get("duration"));
-            console.log("genre", formData.get("selectedGenre"));
             const isExplicit = formData.get("isExplicit") === "true";
             const duration = Number(formData.get("duration"));
 
@@ -44,14 +40,6 @@ function PlaylistTracksFilterModal({
             handleModalOpen(false);
           }}
         >
-          <div className="m-3 text-lg">
-            <Dialog.Description className="text-lg">Genre</Dialog.Description>
-
-            <p>Filter by genre</p>
-
-            <GenreFilter playlistData={playlistData} />
-          </div>
-
           <div className="m-3 text-lg">
             <Dialog.Description className="text-lg">Length</Dialog.Description>
 
