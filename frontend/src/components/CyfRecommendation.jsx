@@ -19,9 +19,6 @@ const CyfRecommendation = () => {
 
   return (
     <div className="cyf_list">
-      <p>
-        <strong>Tracks</strong>
-      </p>
       {loading ? (
         <p className="text-center text-blue-600">
           Loading Tracks...

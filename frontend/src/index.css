@@ -355,7 +355,7 @@ code {
   }
   .tracks {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 3em;
     width: 180px;
     margin-left: 16em;
