@@ -338,6 +338,10 @@ code {
   transform: scale(1.1);
   color: #24a0ed;
 }
+.logoutBtnDiv{
+  position: absolute;
+  right: 0px;
+}
 
 @media only screen and (min-width: 992px) {
   .cyf_logo {

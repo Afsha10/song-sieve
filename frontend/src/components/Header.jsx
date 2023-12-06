@@ -40,8 +40,11 @@ const Header = () => {
         </div>
         <div className="header_username">
           <p>Hello {userName}!</p>
-          <LogoutButton />
+          
         </div>
+      </div>
+      <div className="logoutBtnDiv">
+      <LogoutButton />
       </div>
     </div>
   );
