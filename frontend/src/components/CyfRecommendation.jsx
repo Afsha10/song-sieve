@@ -35,7 +35,7 @@ const CyfRecommendation = () => {
         <div className="tracks">
           {recommendationList.map((track) => (
             <li className="track_list" key={track.id}>
-              <iframe src={track.iframe_url} width="280" height="100"></iframe>
+              <iframe className="iframe_2" src={track.iframe_url} width="280" height="100"></iframe>
               <div className="card">
                 <img
                   src={track.image_url}
