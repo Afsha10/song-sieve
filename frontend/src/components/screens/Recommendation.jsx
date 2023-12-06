@@ -7,7 +7,6 @@ const RecommendationScreen = () => {
     <div>
       <Header />
       <CyfFavPlaylist />
-
       <CyfRecommendation />
     </div>
   );
