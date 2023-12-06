@@ -244,6 +244,7 @@ code {
   .cyf_img {
     width: 25em;
     height: 15em;
+    border-radius: 3px;
   }
   .cyfImg {
     padding-right: 6px;
