@@ -26,7 +26,7 @@ function MainScreen() {
   }, [token]);
 
   return (
-    <div className=" bg-black text-white">
+    <div className=" bg-black text-white grow">
       <div className="filter">
         <Header />
         <RecommendationPageLink />
