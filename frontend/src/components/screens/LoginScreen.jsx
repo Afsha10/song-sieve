@@ -25,7 +25,7 @@ function LoginScreen() {
   }, []);
 
   return (
-    <div>
+    <div className="grow">
       <HeaderLogin />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div className="mainLoginDiv">
