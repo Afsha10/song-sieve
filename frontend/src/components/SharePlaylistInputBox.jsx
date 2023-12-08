@@ -5,10 +5,8 @@ import { useNavigate } from "react-router-dom";
 const SharePlaylistInputBox = () => {
   const navigate = useNavigate();
   const [inputUrl, setInputUrl] = useState("");
-  const [playlistData, setPlaylistData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [showTracksScreen, setShowTracksScreen] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,11 +16,6 @@ const SharePlaylistInputBox = () => {
     const playListId = arrayOfString[arrayOfString.length - 1].split("?")[0];
     navigate(`/app/playlist/${playListId}`);
     setLoading(false);
-
-    // const myAccessToken = localStorage.getItem("access_token");
-    // const myTokenType = localStorage.getItem("token_type");
-
-    //
   };
 
   return (
