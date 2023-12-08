@@ -10,9 +10,15 @@ However, the individual playlists depend on their personal preferences: some peo
 
 ## Deployed site:
 
-- Frontend link: https://song-sieve-frontend.onrender.com/
+- Frontend link: 
 
-- Backend link: https://song-sieve-server.onrender.com/
+https://song-sieve-frontend.onrender.com/
+
+- Backend link: 
+
+https://song-sieve-server.onrender.com/
+
+https://song-sieve-server.onrender.com/tracks
 
 ## User stories:
 
