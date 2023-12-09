@@ -5,8 +5,6 @@ import { base64encode } from "../../utils/encodingUtils";
 import { redirectToSpotify } from "../../utils/spotifyApiUtils";
 import HeaderLogin from "../HeaderLogin";
 
-//import bg from "../images/hero.jpg";
-
 function LoginScreen() {
   useEffect(() => {
     async function codeChallengeReturn() {
