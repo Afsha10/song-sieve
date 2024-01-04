@@ -52,8 +52,8 @@ function LoginScreen() {
                 </div>
                 <div>
                   <p class="text-sm">
-                    If you want to test our service and don't have a Spotify
-                    account, please use the following credentials:
+                    If you want to test our service using a Spotify account,
+                    please use the following credentials:
                     <ul>
                       <li>
                         Email: <code>cyfqueens@gmail.com</code>
