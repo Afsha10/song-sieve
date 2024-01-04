@@ -150,7 +150,7 @@ code {
 .secondLoginDiv {
   position: absolute;
   width: 100%;
-  height: 50%;
+  height: 47%;
   bottom: 0px;
   margin-bottom: 15px;
   margin-top: 25px;
@@ -180,7 +180,7 @@ code {
 }
 .divLoginBtn {
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   right: 40px;
   left: 40px;
   display: flex;
@@ -203,7 +203,7 @@ code {
   }
   .divLoginBtn {
     position: absolute;
-    bottom: 20px;
+    bottom: -40px;
     right: 100px;
     left: 100px;
   }
@@ -226,7 +226,7 @@ code {
   .secondLoginDiv img {
     height: 400px;
     width: 100%;
-    margin-top: 0px;
+    margin-top: 10px;
     box-shadow: 0 0 8px 8px white inset;
   }
   #textLogin {
@@ -293,7 +293,6 @@ code {
   width: 270px;
   margin-left: auto;
   margin-right: auto;
-  
 }
 .track_list {
   margin-top: 2em;
@@ -303,7 +302,6 @@ code {
   border-top: 1px solid gold;
   border-radius: 0.7em;
   width: 280px;
-  
 }
 .card {
   display: flex;
