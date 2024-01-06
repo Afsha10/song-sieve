@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className="footer">
       <footer>
-        <p>&copy; 2023 Spotify Playlist Sieve</p>
+        <p>&copy; 2024 Spotify Playlist Sieve</p>
       </footer>
     </div>
   );
